@@ -40,7 +40,9 @@ app.add_middleware(
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 client = anthropic.Anthropic(api_key=ANTHROPIC_KEY) if ANTHROPIC_KEY and not ANTHROPIC_KEY.startswith("your-") else None
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "veloai.db")
+# Vercel read-only filesystem → /tmp kullan; lokalde proje dizini
+_IS_VERCEL = os.environ.get("VERCEL", "") == "1"
+DB_PATH = "/tmp/veloai.db" if _IS_VERCEL else os.path.join(os.path.dirname(__file__), "veloai.db")
 _notif_executor = ThreadPoolExecutor(max_workers=2)
 
 # ── BİLDİRİM SİSTEMİ ─────────────────────────────────────────────────────────
