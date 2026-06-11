@@ -358,6 +358,23 @@ async def gemini_proxy(req: GeminiRequest):
     key = os.environ.get("GEMINI_API_KEY", "")
     if not key:
         raise HTTPException(status_code=500, detail="Gemini key not configured")
+    # Vercel'de session işlemlerini atla (ephemeral /tmp DB, SQLite unreliable)
+    if _IS_VERCEL:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={key}"
+        body = {"contents": req.contents}
+        if req.systemInstruction: body["systemInstruction"] = req.systemInstruction
+        if req.tools: body["tools"] = req.tools
+        if req.generationConfig: body["generationConfig"] = req.generationConfig
+        try:
+            async with httpx.AsyncClient(timeout=55.0) as c:
+                r = await c.post(url, json=body)
+            if r.status_code != 200:
+                raise HTTPException(status_code=r.status_code, detail=r.text)
+            return r.json()
+        except httpx.TimeoutException:
+            raise HTTPException(status_code=504, detail="Gemini timeout")
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
 
     # Son kullanıcı mesajını kaydet
     session_id = req.session_id
