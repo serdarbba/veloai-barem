@@ -1,0 +1,8 @@
+.env
+veloai.db
+veloai.db-shm
+veloai.db-wal
+__pycache__/
+*.pyc
+venv/
+.DS_Store
