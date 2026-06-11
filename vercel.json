@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/demo.html" }
+  ],
+  "functions": {
+    "api/gemini.py": { "runtime": "python3.12" }
+  }
+}

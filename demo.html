@@ -1355,13 +1355,16 @@ const CARS=[
 ];
 
 let favs=new Set(),sC='good',selSlot='09:00 – 11:00',chatOpen=false,chatReady=false;
-// Localhost'ta local backend, GitHub Pages'ta Render backend
+// Localhost → local FastAPI | Vercel → /api (serverless) | diğer → Render
 const BACKEND_URL = (()=>{
   const h = window.location.hostname;
   if(h==='localhost'||h==='127.0.0.1') return 'http://localhost:8765';
-  // Production: Render.com backend URL buraya gelecek
-  return window._BACKEND_URL || 'https://barem-ai.onrender.com';
+  if(h.endsWith('vercel.app')||h.endsWith('veloai.app')) return '';  // same-origin /api/gemini
+  return 'https://barem-ai.onrender.com';
 })();
+
+// Vercel'de /api/gemini, lokalde /gemini endpoint'i kullan
+function geminiEndpoint(){ return BACKEND_URL ? BACKEND_URL+'/gemini' : '/api/gemini'; }
 let chatHistory=[];
 let timerInt=null;
 let SESSION_ID=localStorage.getItem('velo_sid')||'';
@@ -1491,7 +1494,7 @@ async function callGemini(userMsg){
   try{
     while(iter<6){
       const body={systemInstruction:{parts:[{text:SYS}]},contents:chatHistory,tools:GEMINI_TOOLS,generationConfig:{temperature:.7,maxOutputTokens:900},session_id:SESSION_ID};
-      const r=await fetch(BACKEND_URL+'/gemini',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      const r=await fetch(geminiEndpoint(),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       if(!r.ok){const e=await r.json();throw new Error(e.detail||'HTTP '+r.status);}
       const data=await r.json();
       const parts=data.candidates?.[0]?.content?.parts;
