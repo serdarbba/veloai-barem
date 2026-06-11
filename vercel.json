@@ -1,8 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/demo.html" }
+  "version": 2,
+  "builds": [
+    { "src": "backend.py", "use": "@vercel/python" }
   ],
-  "functions": {
-    "api/gemini.py": { "runtime": "python3.12" }
-  }
+  "routes": [
+    { "src": "/demo.html", "dest": "/demo.html" },
+    { "src": "/(.*)", "dest": "/backend.py" }
+  ]
 }

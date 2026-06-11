@@ -914,3 +914,16 @@ def health():
 @app.get("/config")
 def config():
     return {"status": "ok"}
+
+@app.get("/demo.html", response_class=HTMLResponse)
+def serve_demo():
+    demo_path = os.path.join(os.path.dirname(__file__), "demo.html")
+    try:
+        with open(demo_path, "r", encoding="utf-8") as f:
+            return HTMLResponse(f.read())
+    except FileNotFoundError:
+        raise HTTPException(404, "demo.html bulunamadı")
+
+@app.get("/", response_class=HTMLResponse)
+def serve_root():
+    return serve_demo()
