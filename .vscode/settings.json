@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "venv/": true,
+    "veloai.db": true,
+    "veloai.db-shm": true,
+    "veloai.db-wal": true
+  },
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  "emmet.includeLanguages": { "html": "html" },
+  "[html]": { "editor.defaultFormatter": "vscode.html-language-features" },
+  "[python]": { "editor.defaultFormatter": "ms-python.python" }
+}
