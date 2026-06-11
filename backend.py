@@ -355,7 +355,7 @@ class GeminiRequest(BaseModel):
 
 @app.post("/gemini")
 async def gemini_proxy(req: GeminiRequest):
-    key = os.environ.get("GEMINI_API_KEY", "")
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
         raise HTTPException(status_code=500, detail="Gemini key not configured")
     # Vercel'de session işlemlerini atla (ephemeral /tmp DB, SQLite unreliable)
