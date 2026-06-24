@@ -710,6 +710,7 @@ class GeminiRequest(BaseModel):
 
 
 @app.post("/gemini")
+@app.post("/api/gemini")
 async def gemini_proxy(req: GeminiRequest):
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:

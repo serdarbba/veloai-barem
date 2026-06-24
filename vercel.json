@@ -1,10 +1,13 @@
 {
   "version": 2,
   "builds": [
-    { "src": "backend.py", "use": "@vercel/python" }
+    {
+      "src": "backend.py",
+      "use": "@vercel/python",
+      "config": { "includeFiles": ["demo.html"] }
+    }
   ],
   "routes": [
-    { "src": "/demo.html", "dest": "/demo.html" },
     { "src": "/(.*)", "dest": "/backend.py" }
   ]
 }
