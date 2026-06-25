@@ -721,7 +721,9 @@ async def gemini_proxy(req: GeminiRequest):
         body = {"contents": req.contents}
         if req.systemInstruction: body["systemInstruction"] = req.systemInstruction
         if req.tools:             body["tools"] = req.tools
-        if req.generationConfig:  body["generationConfig"] = req.generationConfig
+        gen_cfg = dict(req.generationConfig or {})
+        gen_cfg.setdefault("thinkingConfig", {"thinkingBudget": 0})
+        body["generationConfig"] = gen_cfg
         try:
             async with httpx.AsyncClient(timeout=55.0) as c:
                 r = await c.post(url, json=body)
@@ -749,7 +751,9 @@ async def gemini_proxy(req: GeminiRequest):
     body = {"contents": req.contents}
     if req.systemInstruction: body["systemInstruction"] = req.systemInstruction
     if req.tools:             body["tools"] = req.tools
-    if req.generationConfig:  body["generationConfig"] = req.generationConfig
+    gen_cfg = dict(req.generationConfig or {})
+    gen_cfg.setdefault("thinkingConfig", {"thinkingBudget": 0})
+    body["generationConfig"] = gen_cfg
 
     async with httpx.AsyncClient(timeout=60.0) as hc:
         r = await hc.post(url, json=body)
