@@ -320,6 +320,70 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 #toast.ok{border-left:3px solid var(--g);color:var(--g)}
 @media(max-width:768px){.nav-links{display:none}.hero-inner{grid-template-columns:1fr}.fg-row,.cond-grid{grid-template-columns:1fr 1fr}#chat-box{width:calc(100vw - 18px);right:9px}.ai-b-row{margin-left:0;width:100%}.ai-key-inp{width:100%}}
+@media(max-width:700px){#impact .wrap>div:last-child{grid-template-columns:1fr}}
+
+/* ── 3 KATMAN + COMMAND CENTER ─────────────────────────────────── */
+.layer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.layer-card{border-radius:20px;padding:28px;border:2px solid var(--border);background:#fff;cursor:pointer;transition:var(--t);position:relative;overflow:hidden}
+.layer-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.layer-card.lc1:hover{border-color:rgba(124,58,237,.3)}
+.layer-card.lc2:hover{border-color:rgba(8,145,178,.3)}
+.layer-card.lc3{background:linear-gradient(145deg,#0a0a18,#12122a);border-color:rgba(124,58,237,.4)}
+.layer-num{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.lc1 .layer-num{color:var(--p)} .lc2 .layer-num{color:var(--c)} .lc3 .layer-num{color:#a78bfa}
+.layer-ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}
+.lc1 .layer-ico{background:var(--pl)} .lc2 .layer-ico{background:var(--cl)} .lc3 .layer-ico{background:rgba(124,58,237,.2)}
+.layer-card h3{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.lc3 h3{color:#fff} .lc3 p{color:rgba(255,255,255,.55)!important}
+.layer-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.ltag{font-size:.67rem;font-weight:600;padding:3px 9px;border-radius:100px;background:var(--bg3);color:var(--text2)}
+.lc3 .ltag{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)}
+.layer-cta{display:inline-flex;align-items:center;gap:5px;margin-top:16px;font-size:.78rem;font-weight:700;text-decoration:none;padding:7px 14px;border-radius:9px;transition:var(--t)}
+.lc1 .layer-cta{color:var(--p);background:var(--pl)} .lc1 .layer-cta:hover{background:#e9d9ff}
+.lc2 .layer-cta{color:var(--c);background:var(--cl)} .lc2 .layer-cta:hover{background:#c8edf8}
+.lc3 .layer-cta{color:#a78bfa;background:rgba(124,58,237,.18)} .lc3 .layer-cta:hover{background:rgba(124,58,237,.28)}
+.sec-label{display:flex;align-items:center;gap:14px;padding:40px 0 0}
+.sec-label-num{font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--p);background:var(--pl);padding:3px 10px;border-radius:100px}
+.sec-label-line{flex:1;height:1px;background:var(--border)}
+.sec-label-title{font-size:.72rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em}
+
+/* Command Center */
+.cc-grid{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:48px}
+.cc-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px}
+.cc-panel-h{font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.cc-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.cc-kpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px}
+.cc-kpi-n{font-size:2rem;font-weight:900;letter-spacing:-.04em;line-height:1}
+.cc-kpi-l{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:4px;font-weight:600}
+.cc-kpi-d{font-size:.68rem;font-weight:700;margin-top:6px;padding:2px 8px;border-radius:100px;display:inline-block}
+.cc-kpi-up{background:rgba(52,211,153,.15);color:#34d399} .cc-kpi-down{background:rgba(239,68,68,.15);color:#f87171} .cc-kpi-warn{background:rgba(251,191,36,.15);color:#fbbf24}
+.risk-item{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-radius:10px;margin-bottom:8px}
+.risk-r{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2)}
+.risk-y{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.18)}
+.risk-g{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.18)}
+.risk-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.risk-r .risk-dot{background:#ef4444} .risk-y .risk-dot{background:#fbbf24} .risk-g .risk-dot{background:#34d399}
+.risk-text{font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.5}
+.risk-label{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.35);margin-top:2px}
+.rec-item{padding:14px 16px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-radius:12px;margin-bottom:10px;cursor:pointer;transition:var(--t)}
+.rec-item:hover{background:rgba(124,58,237,.18);border-color:rgba(124,58,237,.35)}
+.rec-item-top{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.rec-item-badge{font-size:.62rem;font-weight:800;padding:2px 8px;border-radius:100px;text-transform:uppercase;letter-spacing:.06em}
+.rb-p{background:rgba(52,211,153,.15);color:#34d399}
+.rb-w{background:rgba(251,191,36,.15);color:#fbbf24}
+.rb-a{background:rgba(167,139,250,.2);color:#a78bfa}
+.rec-item h5{font-size:.83rem;font-weight:700;color:#fff}
+.rec-item p{font-size:.73rem;color:rgba(255,255,255,.5);margin-top:3px;line-height:1.5}
+.emp-table{width:100%;border-collapse:collapse;font-size:.78rem;margin-top:16px}
+.emp-table th{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.3);padding:6px 10px;text-align:left}
+.emp-table td{padding:10px 10px;border-top:1px solid rgba(255,255,255,.06)}
+.emp-name{font-weight:700;color:#fff} .emp-stat{color:rgba(255,255,255,.55)}
+.emp-bar{height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin-top:5px;overflow:hidden}
+.emp-fill{height:100%;border-radius:2px}
+.copilot-chat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;margin-bottom:12px}
+.cc-msg-ai{background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.2);border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:.8rem;color:rgba(255,255,255,.8);line-height:1.6}
+.cc-msg-user{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:.8rem;color:rgba(255,255,255,.6);text-align:right}
+@media(max-width:900px){.layer-grid{grid-template-columns:1fr}.cc-grid{grid-template-columns:1fr}}
 
 /* DASHBOARD */
 .dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
@@ -502,6 +566,109 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
 .social-links{display:flex;gap:8px;margin-top:12px}
 .soc-ico{width:32px;height:32px;border-radius:50%;background:var(--bg3);border:1.5px solid var(--border);display:grid;place-items:center;text-decoration:none;font-size:.85rem;transition:var(--t)}
 .soc-ico:hover{background:var(--pl);border-color:rgba(124,58,237,.3)}
+
+/* MOD SWITCHER */
+.mode-switcher{display:inline-flex;gap:3px;padding:4px;background:rgba(0,0,0,.07);border-radius:100px;margin-bottom:22px}
+.mode-btn{padding:6px 18px;border-radius:100px;border:none;background:transparent;font-size:.76rem;font-weight:700;cursor:pointer;transition:var(--t);color:var(--text2)}
+.mode-btn.mode-active{background:#fff;color:var(--p);box-shadow:0 1px 6px rgba(0,0,0,.12)}
+.mode-content{transition:opacity .2s}
+
+/* KAYIP PARA PANELİ */
+.kp-panel{border-color:rgba(248,113,113,.3)!important}
+.kp-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.kp-item{padding:12px 14px;background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.18);border-radius:10px}
+.kp-num{font-size:1.9rem;font-weight:900;color:#f87171;letter-spacing:-.04em;line-height:1}
+.kp-label{font-size:.67rem;color:rgba(255,255,255,.5);font-weight:600;margin-top:3px}
+.kp-ciro{font-size:.74rem;color:#fbbf24;font-weight:800;margin-top:6px}
+.kp-total-row{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(248,113,113,.12);border:1.5px solid rgba(248,113,113,.3);border-radius:10px}
+.kp-total-lbl{font-size:.72rem;color:rgba(255,255,255,.55);font-weight:700}
+.kp-total-num{font-size:1.55rem;font-weight:900;color:#f87171;letter-spacing:-.04em}
+.kp-note{font-size:.63rem;color:rgba(255,255,255,.25);margin-top:8px;line-height:1.5}
+
+/* SORUN BÖLÜMÜ */
+.sorun-layout{display:grid;grid-template-columns:1fr auto 1fr;gap:32px 48px;align-items:center;margin:52px 0 0}
+.chaos-lbl{font-size:.63rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:12px}
+.chaos-sources{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.chaos-src{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:.74rem;font-weight:700;color:var(--text1);box-shadow:0 1px 4px rgba(0,0,0,.06);transition:var(--t)}
+.chaos-src:hover{border-color:rgba(239,68,68,.3);box-shadow:0 2px 8px rgba(239,68,68,.08)}
+.chaos-src-ico{font-size:1.2rem;flex-shrink:0}
+.chaos-mid{display:flex;flex-direction:column;align-items:center;gap:10px}
+.chaos-mid-lbl{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#ef4444;white-space:nowrap}
+.chaos-mid-arrow{width:2px;height:60px;background:linear-gradient(180deg,#ef4444,rgba(239,68,68,0));border-radius:1px;position:relative}
+.chaos-mid-arrow::after{content:'▼';position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);color:#ef4444;font-size:.75rem}
+.cq-list{display:flex;flex-direction:column;gap:8px}
+.cq-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#fff5f5;border:1.5px solid rgba(239,68,68,.18);border-radius:10px}
+.cq-ico{font-size:1rem;flex-shrink:0}
+.cq-text{font-size:.78rem;font-weight:700;color:#dc2626}
+.cq-sub{font-size:.67rem;color:#ef4444;opacity:.75;margin-top:1px}
+.sorun-bridge{margin-top:48px;background:linear-gradient(135deg,rgba(124,58,237,.07),rgba(8,145,178,.07));border:1.5px solid rgba(124,58,237,.18);border-radius:20px;padding:36px 40px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.sb-before{flex-shrink:0}
+.sb-before-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:100px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:var(--p);font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.sb-before h3{font-size:1.5rem;font-weight:900;letter-spacing:-.03em;line-height:1.15;margin-bottom:8px}
+.sb-before p{font-size:.88rem;color:var(--text2);line-height:1.7;max-width:420px}
+.sb-quote{border-left:3px solid var(--p);padding:10px 16px;margin-top:16px;font-size:.9rem;font-weight:700;color:var(--p);font-style:italic;background:rgba(124,58,237,.05);border-radius:0 8px 8px 0}
+.sb-cta-col{margin-left:auto;display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-shrink:0}
+@media(max-width:900px){.sorun-layout{grid-template-columns:1fr;gap:24px}.chaos-mid-arrow{height:30px;width:60px;background:linear-gradient(90deg,#ef4444,rgba(239,68,68,0))}.chaos-mid{flex-direction:row}.chaos-mid-arrow::after{content:'▶';bottom:50%;right:-20px;left:auto;transform:translateY(50%)}.sorun-bridge{padding:24px}.sb-cta-col{margin-left:0;align-items:flex-start}}
+@media(max-width:600px){.chaos-sources{grid-template-columns:1fr 1fr}}
+
+/* DATA FLOW PIPELINE */
+.flow-pipeline{display:flex;align-items:center;justify-content:center;gap:0;margin:48px 0 36px;overflow-x:auto;padding:16px 0 20px}
+.fp-node{display:flex;flex-direction:column;align-items:center;gap:5px;padding:16px 12px;border-radius:14px;min-width:100px;max-width:116px;background:#fff;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:center;flex-shrink:0;transition:var(--t)}
+.fp-node:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.fp-node.fn-wa{border-color:rgba(37,211,102,.4);background:linear-gradient(145deg,#f0fdf4,#fff)}
+.fp-node.fn-ai{border-color:rgba(124,58,237,.35);background:linear-gradient(145deg,#f5f3ff,#fff)}
+.fp-node.fn-crm{border-color:rgba(8,145,178,.3);background:linear-gradient(145deg,#f0f9ff,#fff)}
+.fp-node.fn-rnd{border-color:rgba(217,119,6,.3);background:linear-gradient(145deg,#fffbeb,#fff)}
+.fp-node.fn-rep{border-color:rgba(124,58,237,.2);background:linear-gradient(145deg,#faf5ff,#fff)}
+.fp-node.fn-sale{border-color:rgba(5,150,105,.4);background:linear-gradient(145deg,#ecfdf5,#fff)}
+.fp-ico{font-size:1.6rem;line-height:1}
+.fp-title{font-size:.72rem;font-weight:800;color:var(--text1);line-height:1.2}
+.fp-sub{font-size:.62rem;color:var(--text2)}
+.fp-conn{flex:1;min-width:24px;max-width:48px;position:relative;height:28px;flex-shrink:0;display:flex;align-items:center}
+.fp-conn::before{content:'';position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(124,58,237,.15),rgba(124,58,237,.45),rgba(124,58,237,.15));border-radius:1px}
+.fp-dot{width:8px;height:8px;border-radius:50%;background:var(--p);position:absolute;animation:flowDot 2.4s linear infinite;opacity:0}
+.fp-conn:nth-of-type(2) .fp-dot{animation-delay:0s}
+.fp-conn:nth-of-type(4) .fp-dot{animation-delay:.48s}
+.fp-conn:nth-of-type(6) .fp-dot{animation-delay:.96s}
+.fp-conn:nth-of-type(8) .fp-dot{animation-delay:1.44s}
+.fp-conn:nth-of-type(10) .fp-dot{animation-delay:1.92s}
+@keyframes flowDot{0%{left:-4px;opacity:0}8%{opacity:1}88%{opacity:1}100%{left:calc(100% + 4px);opacity:0}}
+.flow-stats-bar{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-top:8px}
+.fsb-item{text-align:center}
+.fsb-item strong{display:block;font-size:1.5rem;font-weight:900;color:var(--p);letter-spacing:-.03em}
+.fsb-item span{font-size:.72rem;color:var(--text2);font-weight:600}
+@media(max-width:768px){.flow-pipeline{justify-content:flex-start;padding:16px 4px}.fp-node{min-width:82px;padding:12px 8px}.fp-conn{min-width:12px;max-width:22px}.flow-stats-bar{gap:24px}}
+
+/* COMMAND CENTER: DATA SOURCES BAR */
+.csrc-bar{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:28px;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px}
+.csrc-lbl{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-right:4px;flex-shrink:0}
+.csrc-item{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:100px;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);font-size:.65rem;font-weight:700;color:#34d399}
+.csrc-dot{width:5px;height:5px;border-radius:50%;background:currentColor;animation:blink 1.5s infinite}
+
+/* COMMAND CENTER: AI QUERY SCREEN */
+.aq-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.aq-chip{padding:5px 11px;border-radius:100px;border:1px solid rgba(167,139,250,.25);background:rgba(167,139,250,.08);color:rgba(255,255,255,.65);font-size:.68rem;font-weight:600;cursor:pointer;transition:var(--t)}
+.aq-chip:hover,.aq-chip.aq-active{border-color:rgba(167,139,250,.6);background:rgba(167,139,250,.2);color:#a78bfa}
+.aq-input-row{display:flex;gap:8px}
+.aq-input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:8px 12px;color:#fff;font-size:.78rem;outline:none;font-family:inherit}
+.aq-input::placeholder{color:rgba(255,255,255,.28)}
+.aq-input:focus{border-color:rgba(167,139,250,.5)}
+.aq-btn{padding:8px 14px;border-radius:9px;background:linear-gradient(135deg,#7c3aed,#0891b2);border:none;color:#fff;font-size:.75rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:var(--t)}
+.aq-btn:hover{opacity:.85}
+.aq-response{margin-top:12px;display:none}
+.aq-response.show{display:block}
+.aq-res-q{font-size:.7rem;color:rgba(255,255,255,.4);margin-bottom:8px;display:flex;align-items:center;gap:6px;padding:0 2px}
+.aq-res-q::before{content:'→';color:#a78bfa;font-weight:700;flex-shrink:0}
+.aq-res-items{display:flex;flex-direction:column;gap:7px}
+.aq-res-item{display:flex;gap:10px;padding:9px 11px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;align-items:flex-start}
+.aq-res-icon{font-size:.95rem;flex-shrink:0;margin-top:1px}
+.aq-res-text h6{font-size:.73rem;font-weight:700;color:#fff;margin-bottom:2px}
+.aq-res-text p{font-size:.68rem;color:rgba(255,255,255,.5);line-height:1.5}
+.aq-res-item.aq-risk{border-color:rgba(248,113,113,.25);background:rgba(248,113,113,.06)}
+.aq-res-item.aq-ok{border-color:rgba(52,211,153,.25);background:rgba(52,211,153,.06)}
+.aq-res-item.aq-warn{border-color:rgba(251,191,36,.25);background:rgba(251,191,36,.06)}
+.aq-loading{text-align:center;padding:14px;color:rgba(255,255,255,.3);font-size:.76rem;display:none}
+.aq-loading.show{display:block}
 </style>
 </head>
 <body>
@@ -510,18 +677,17 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
   <div class="nav-in">
     <a href="#" class="logo"><div class="logo-ico">V</div>VeloAI</a>
     <div class="nav-links">
-      <a href="#hiw">Nasıl Çalışır</a>
-      <a href="#inventory">Araçlar</a>
-      <a href="#sell">Araç Sat</a>
-      <a href="#konsinye">Konsinye</a>
-      <a href="#loan">Kredi</a>
-      <a href="#hesaplamalar">Hesaplamalar</a>
-      <a href="#appointment">Randevu</a>
+      <a href="#satis-portali" style="display:flex;align-items:center;gap:5px">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--p);display:inline-block"></span>Satış Portalı</a>
+      <a href="#bayi-paneli" style="display:flex;align-items:center;gap:5px">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--c);display:inline-block"></span>Bayi Paneli</a>
+      <a href="#command-center" style="display:flex;align-items:center;gap:5px">
+        <span style="width:6px;height:6px;border-radius:50%;background:#a78bfa;display:inline-block"></span>Command Center</a>
     </div>
     <div class="nav-end">
       <div class="live-visitors" id="liveVisitors"><div class="lv-dot"></div><span id="lv-count">23</span> kişi çevrimiçi</div>
       <span class="pill" onclick="toggleLang()" id="langPill">EN</span>
-      <a href="#appointment" class="btn btn-p" style="font-size:.81rem;padding:7px 15px">Randevu Al</a>
+      <a href="#appointment" class="btn btn-p" style="font-size:.81rem;padding:7px 15px">Demo Al</a>
     </div>
   </div>
 </nav>
@@ -531,18 +697,44 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
   <div class="wrap">
     <div class="hero-inner">
       <div>
-        <div class="hero-kicker">🤖 Yapay Zekâ Destekli Dijital Satış Platformu &nbsp;·&nbsp; <strong>Barem Cars için hazırlandı</strong></div>
-        <h1>Müşteriniz size<br>gelmeden önce<br><span class="g-text">ikna olsun.</span></h1>
-        <p class="hero-sub">Gece 2'de gelen soruyu cevaplayan, randevu alan, kredi hesaplayan, ön değerleme ve değer kaybı hesabı yapan — 7/24 AI asistan. Müşteri size geldiğinde zaten karar vermiş olarak geliyor.</p>
-        <div class="hero-actions">
-          <a href="#hiw" class="btn btn-p btn-xl">Nasıl Çalışır →</a>
-          <button class="btn btn-g btn-xl" onclick="openChatF()">💬 AI'yı Dene</button>
+        <div class="hero-kicker" id="hero-kicker-text">Otomotiv İşletmelerinin Operasyon Zekası &nbsp;·&nbsp; <strong>Barem Cars için hazırlandı</strong></div>
+
+        <!-- MOD SWITCHER -->
+        <div class="mode-switcher">
+          <button class="mode-btn mode-active" id="mode-dealer" onclick="setMode('dealer')">🏪 Bayi Modu</button>
+          <button class="mode-btn" id="mode-enterprise" onclick="setMode('enterprise')">🏢 Enterprise</button>
         </div>
-        <div class="hero-proof">
-          <div class="proof-item"><div class="proof-num">7/24</div><div class="proof-label">AI Müşteri Hizmeti</div></div>
-          <div class="proof-item"><div class="proof-num">%67</div><div class="proof-label">Daha Az Kayıp Müşteri</div></div>
-          <div class="proof-item"><div class="proof-num">3dk</div><div class="proof-label">Ort. Yanıt Süresi</div></div>
-          <div class="proof-item"><div class="proof-num">₺0</div><div class="proof-label">Hafta Sonu Personeli</div></div>
+
+        <!-- DEALER MODE -->
+        <div class="mode-content" id="hero-dealer">
+          <h1>Satış temsilciniz<br>uyurken AI<br><span class="g-text">müşteriye cevap veriyor.</span></h1>
+          <p class="hero-sub">Gece gelen WhatsApp mesajları yanıtlanır, sabah temsilciniz hazır randevu listesiyle işe başlar. Lead kaçmaz, satış kaybedilmez.</p>
+          <div class="hero-actions">
+            <a href="#sorun" class="btn btn-p btn-xl">Kaç Lead Kaçıyorsunuz? →</a>
+            <a href="#inventory" class="btn btn-g btn-xl" style="border-color:rgba(124,58,237,.3);color:var(--p)">Canlı Demo Gör</a>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-item"><div class="proof-num" style="color:#ef4444">7/24</div><div class="proof-label">Yanıt Kapasitesi</div></div>
+            <div class="proof-item"><div class="proof-num">%67*</div><div class="proof-label">Azalan Lead Kaybı</div></div>
+            <div class="proof-item"><div class="proof-num">3.2×*</div><div class="proof-label">Artan Randevu</div></div>
+            <div class="proof-item"><div class="proof-num">0</div><div class="proof-label">Yanıtsız Mesaj</div></div>
+          </div>
+        </div>
+
+        <!-- ENTERPRISE MODE -->
+        <div class="mode-content" id="hero-enterprise" style="display:none">
+          <h1>Dağınık veriyi<br>tek karara<br><span class="g-text">dönüştürüyoruz.</span></h1>
+          <p class="hero-sub">WhatsApp'tan CRM'e, stoktan performansa — bütün operasyonu tek zeka katmanında topluyoruz. Yönetici artık rapor okumaz, soru sorar.</p>
+          <div class="hero-actions">
+            <a href="#mimari" class="btn btn-p btn-xl">Mimariyi Gör →</a>
+            <a href="#command-center" class="btn btn-g btn-xl" style="border-color:rgba(124,58,237,.3);color:var(--p)">⚡ Command Center</a>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-item"><div class="proof-num" style="background:linear-gradient(135deg,var(--p),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">3</div><div class="proof-label">Ürün Katmanı</div></div>
+            <div class="proof-item"><div class="proof-num">7/24</div><div class="proof-label">AI Zekası</div></div>
+            <div class="proof-item"><div class="proof-num">%67*</div><div class="proof-label">Azalan Kayıp</div></div>
+            <div class="proof-item"><div class="proof-num">Tek</div><div class="proof-label">Platform</div></div>
+          </div>
         </div>
       </div>
 
@@ -550,7 +742,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
       <div>
         <div class="funnel-card">
           <div class="fc-header">
-            <h4>AI Satış Hunisi</h4>
+            <h4>Akıllı Satış Hunisi</h4>
             <div class="fc-live"><div class="fc-dot"></div>Canlı Demo</div>
           </div>
           <div class="funnel-steps">
@@ -579,10 +771,11 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
             </div>
           </div>
           <div class="fc-stats">
-            <div class="fc-stat"><div class="fc-stat-n">%67</div><div class="fc-stat-l">Daha az kayıp</div></div>
-            <div class="fc-stat"><div class="fc-stat-n">3.2×</div><div class="fc-stat-l">Daha çok randevu</div></div>
+            <div class="fc-stat"><div class="fc-stat-n">%67*</div><div class="fc-stat-l">Azalan kayıp</div></div>
+            <div class="fc-stat"><div class="fc-stat-n">3.2×*</div><div class="fc-stat-l">Artan randevu</div></div>
             <div class="fc-stat"><div class="fc-stat-n">7/24</div><div class="fc-stat-l">Yanıt kapasitesi</div></div>
           </div>
+          <div style="font-size:.61rem;color:var(--text3);padding:6px 14px 8px;border-top:1px solid var(--border)">* Pilot bayi ort. — sonuçlar işletme büyüklüğüne göre değişebilir.</div>
         </div>
       </div>
     </div>
@@ -592,35 +785,222 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
 <!-- TRUST -->
 <div class="trust-strip">
   <div class="trust-inner">
-    <div class="trust-item">🤖 AI Destekli</div>
-    <div class="trust-item">⚡ 15 Dakikada Ödeme</div>
+    <div class="trust-item">🤖 Gemini AI Destekli</div>
+    <div class="trust-item">⚡ Hızlı Ödeme Süreci</div>
     <div class="trust-item">📅 Otomatik Randevu</div>
-    <div class="trust-item">💳 47 Banka Entegrasyonu</div>
+    <div class="trust-item">💳 Çoklu Banka Simülasyonu</div>
     <div class="trust-item">📱 7/24 Yanıt</div>
     <div class="trust-item">🏠 Eve Gelme Ekspertizi</div>
     <div class="trust-item">🔄 Konsinye Hizmeti</div>
   </div>
 </div>
 
+<!-- SORUN BÖLÜMÜ -->
+<section id="sorun" style="background:linear-gradient(180deg,#fafafa 0%,#fff 100%);padding:80px 0;border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sh center" style="margin-bottom:0">
+      <div class="eyebrow">NEDEN VELOAI</div>
+      <h2>İşletmenizin verisi<br><span style="color:#ef4444;text-decoration:line-through;text-decoration-thickness:3px">her yerde dağınık.</span></h2>
+      <p style="max-width:560px;margin:0 auto">Bugün işletmelerin verisi onlarca kanalda parçalı duruyor. Kimse tam tabloyu görmüyor. Kararlar gecikiyor, fırsatlar kaçıyor.</p>
+    </div>
+
+    <div class="sorun-layout">
+      <!-- SOL: KAOS KAYNAKLARI -->
+      <div>
+        <div class="chaos-lbl">Verinin dağıldığı yerler</div>
+        <div class="chaos-sources">
+          <div class="chaos-src"><span class="chaos-src-ico">💬</span>WhatsApp</div>
+          <div class="chaos-src"><span class="chaos-src-ico">📊</span>CRM / Excel</div>
+          <div class="chaos-src"><span class="chaos-src-ico">🏗</span>ERP</div>
+          <div class="chaos-src"><span class="chaos-src-ico">💰</span>Muhasebe</div>
+          <div class="chaos-src"><span class="chaos-src-ico">📧</span>E-posta</div>
+          <div class="chaos-src"><span class="chaos-src-ico">🧠</span>İnsan hafızası</div>
+        </div>
+      </div>
+
+      <!-- ORTA: OK + SONUÇ ETİKETİ -->
+      <div class="chaos-mid">
+        <div class="chaos-mid-lbl">Sonuç</div>
+        <div class="chaos-mid-arrow"></div>
+      </div>
+
+      <!-- SAĞ: SONUÇLAR -->
+      <div>
+        <div class="chaos-lbl">İşletmeye yansıyan zarar</div>
+        <div class="cq-list">
+          <div class="cq-item">
+            <div class="cq-ico">🔴</div>
+            <div><div class="cq-text">Lead kayboluyor</div><div class="cq-sub">Yanıtsız kalan müşteri rakibe gidiyor</div></div>
+          </div>
+          <div class="cq-item">
+            <div class="cq-ico">🔴</div>
+            <div><div class="cq-text">Satış kaçıyor</div><div class="cq-sub">Kararlar gecikmeli, müşteri soğuyor</div></div>
+          </div>
+          <div class="cq-item">
+            <div class="cq-ico">🟠</div>
+            <div><div class="cq-text">Stok yanlış yönetiliyor</div><div class="cq-sub">Talep yoğun araçlar stokta yok</div></div>
+          </div>
+          <div class="cq-item">
+            <div class="cq-ico">🟠</div>
+            <div><div class="cq-text">Performans ölçülemiyor</div><div class="cq-sub">Kim iyi satıyor, kimde problem var?</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VELOAI KÖPRÜSÜ -->
+    <div class="sorun-bridge">
+      <div class="sb-before">
+        <div class="sb-before-tag">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--p);display:inline-block"></span>VeloAI Çözümü
+        </div>
+        <h3>Bütün operasyon<br>tek katmanda.</h3>
+        <p>Tüm kanalları bağlıyor, veriyi anlıyor, aksiyonu üretiyor. Satış ekibiniz satışa odaklanır. Yöneticiler karar verir.</p>
+        <div class="sb-quote">"Artık rapor okumuyorsunuz. Soru soruyorsunuz."</div>
+      </div>
+      <div class="sb-cta-col">
+        <a href="#command-center" class="btn btn-p">AI Sorgu Ekranını Dene →</a>
+        <a href="#veri-akis" class="btn" style="border:1.5px solid var(--border);color:var(--text2);background:#fff">Veri Akışını Gör →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 KATMAN MİMARİ -->
+<section id="mimari" style="background:#fff;padding:80px 0;border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sh center">
+      <div class="eyebrow">3 KATMANLI MİMARİ</div>
+      <h2>Tek platform,<br><span class="g-text">üç güç katmanı.</span></h2>
+      <p>Palantir operasyonu besleyen onlarca uygulama inşa ettiyse, VeloAI otomotiv işletmesinin her katmanını ayrı bir ürünle dijitalleştiriyor — müşteriden CEO'ya kadar.</p>
+    </div>
+    <div class="layer-grid">
+
+      <div class="layer-card lc1">
+        <div class="layer-num">01 — Satış Portalı</div>
+        <div class="layer-ico">🛒</div>
+        <h3>Müşteri Katmanı</h3>
+        <p style="font-size:.84rem;color:var(--text2);line-height:1.65;margin-top:6px">Müşterinin gördüğü ve etkileşime girdiği taraf. Lead üretmek için tasarlandı. Güzel görünmesi şart.</p>
+        <div class="layer-tags">
+          <span class="ltag">Araç Arama</span><span class="ltag">AI Danışman</span>
+          <span class="ltag">Kredi Hesap</span><span class="ltag">Takas</span>
+          <span class="ltag">Randevu</span><span class="ltag">Konsinye</span>
+        </div>
+        <a href="#inventory" class="layer-cta">Satış Portalına Git →</a>
+      </div>
+
+      <div class="layer-card lc2">
+        <div class="layer-num">02 — Bayi Paneli</div>
+        <div class="layer-ico">📊</div>
+        <h3>Operasyon Katmanı</h3>
+        <p style="font-size:.84rem;color:var(--text2);line-height:1.65;margin-top:6px">Müşteri hiç görmez. Satış ekibinin, stok yöneticisinin ve finans departmanının çalışma alanı.</p>
+        <div class="layer-tags">
+          <span class="ltag">Lead Takibi</span><span class="ltag">Randevu Yönetimi</span>
+          <span class="ltag">Araç Stoku</span><span class="ltag">CRM</span>
+          <span class="ltag">Kampanyalar</span><span class="ltag">Raporlar</span>
+        </div>
+        <a href="#bayi-paneli" class="layer-cta">Bayi Paneline Git →</a>
+      </div>
+
+      <div class="layer-card lc3">
+        <div class="layer-num">03 — Command Center</div>
+        <div class="layer-ico">⚡</div>
+        <h3>Zeka Katmanı</h3>
+        <p style="font-size:.84rem;line-height:1.65;margin-top:6px">CEO'dan satış müdürüne kadar herkesin ihtiyaç duyduğu bilgiyi, doğru formatta, doğru anda sunar. Burası Palantir tarafı.</p>
+        <div class="layer-tags">
+          <span class="ltag">Sales Intelligence</span><span class="ltag">Risk Alarmları</span>
+          <span class="ltag">AI Öneriler</span><span class="ltag">Ekip Analizi</span>
+          <span class="ltag">Finance Intel</span><span class="ltag">AI Copilot</span>
+        </div>
+        <a href="#command-center" class="layer-cta">Command Center'ı Gör →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VERI AKIS HARITASI -->
+<section id="veri-akis" style="background:linear-gradient(180deg,#f8f4ff 0%,#fff 100%);padding:80px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sh center">
+      <div class="eyebrow">UÇTAN UCA AKIŞ</div>
+      <h2>Bir mesajdan satışa.<br><span class="g-text">Her adım otomatik.</span></h2>
+      <p style="max-width:520px;margin:0 auto">Müşteri gece 23:00'da WhatsApp'tan mesaj atıyor. Sabah işe geldiğinizde randevu alınmış, temsilciniz bilgilendirilmiş. Bu uçtan uca akış VeloAI'nin en büyük farkı.</p>
+    </div>
+    <div class="flow-pipeline">
+      <div class="fp-node fn-wa">
+        <div class="fp-ico">💬</div>
+        <div class="fp-title">Müşteri Mesajı</div>
+        <div class="fp-sub">WhatsApp / Web</div>
+      </div>
+      <div class="fp-conn"><div class="fp-dot"></div></div>
+      <div class="fp-node fn-ai">
+        <div class="fp-ico">🤖</div>
+        <div class="fp-title">Gemini AI</div>
+        <div class="fp-sub">Yanıt + Analiz</div>
+      </div>
+      <div class="fp-conn"><div class="fp-dot"></div></div>
+      <div class="fp-node fn-crm">
+        <div class="fp-ico">📊</div>
+        <div class="fp-title">CRM / Lead</div>
+        <div class="fp-sub">Otomatik kayıt</div>
+      </div>
+      <div class="fp-conn"><div class="fp-dot"></div></div>
+      <div class="fp-node fn-rnd">
+        <div class="fp-ico">📅</div>
+        <div class="fp-title">Randevu</div>
+        <div class="fp-sub">Sistem ayarlar</div>
+      </div>
+      <div class="fp-conn"><div class="fp-dot"></div></div>
+      <div class="fp-node fn-rep">
+        <div class="fp-ico">👤</div>
+        <div class="fp-title">Temsilci Bildirimi</div>
+        <div class="fp-sub">Push + WhatsApp</div>
+      </div>
+      <div class="fp-conn"><div class="fp-dot"></div></div>
+      <div class="fp-node fn-sale">
+        <div class="fp-ico">✅</div>
+        <div class="fp-title">Satış</div>
+        <div class="fp-sub">Tamamlandı</div>
+      </div>
+    </div>
+    <div class="flow-stats-bar">
+      <div class="fsb-item"><strong>0–3 sn</strong><span>AI yanıt süresi</span></div>
+      <div class="fsb-item"><strong>Otomatik</strong><span>CRM kaydı</span></div>
+      <div class="fsb-item"><strong>7/24</strong><span>Aktif izleme</span></div>
+      <div class="fsb-item"><strong>%0</strong><span>Manuel müdahale</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION LABEL: SATIŞ PORTALI -->
+<div id="satis-portali" class="wrap">
+  <div class="sec-label">
+    <span class="sec-label-num">01</span>
+    <div class="sec-label-line"></div>
+    <span class="sec-label-title">Satış Portalı — Müşteri Katmanı</span>
+  </div>
+</div>
+
 <!-- HOW IT WORKS -->
 <section id="hiw">
   <div class="wrap">
-    <div class="sh center"><div class="eyebrow">NASIL ÇALIŞIR</div><h2>Geleneksel süreci<br><span class="g-text">dijitalleştiriyoruz</span></h2><p>Alım, satım ve konsinye süreçlerinin her adımı AI ile otomatize edilmiş — müşteri hazır, satış hızlı.</p></div>
+    <div class="sh center"><div class="eyebrow">NASIL ÇALIŞIR</div><h2>Geleneksel süreci<br><span class="g-text">dijitalleştiriyoruz</span></h2><p>Alım, satım ve konsinye süreçlerinin her adımı otomatize edilmiş — müşteri hazır, satış hızlı.</p></div>
     <div class="hiw-grid">
       <div class="hiw-card" style="border-color:rgba(124,58,237,.2)">
         <div class="hiw-num">01 — ONLINE</div>
         <span class="hiw-ico">🤖</span>
-        <h3>AI Müşteri Hizmeti</h3>
-        <p>Gece 2'de gelen "bu araç hâlâ satılık mı?" sorusunu AI asistan yanıtlıyor. Araç detayları, karşılaştırma, ön değerleme — anında.</p>
-        <span class="hiw-badge hb-ai">🤖 AI Otomatik</span>
+        <h3>Akıllı Müşteri Hizmeti</h3>
+        <p>Gece 2'de gelen "bu araç hâlâ satılık mı?" sorusunu dijital asistan yanıtlıyor. Araç detayları, karşılaştırma, ön değerleme — anında.</p>
+        <span class="hiw-badge hb-ai">⚡ Otomatik</span>
         <div class="arrow">→</div>
       </div>
       <div class="hiw-card" style="border-color:rgba(8,145,178,.2)">
         <div class="hiw-num">02 — ONLINE</div>
         <span class="hiw-ico">📅</span>
         <h3>Randevu & Ön Hazırlık</h3>
-        <p>Müşteri galeriye gelmeden: hangi araçla ilgileniyor, bütçesi ne, finansman mı istiyor? AI topluyor, siz hazırlıklı karşılıyorsunuz.</p>
-        <span class="hiw-badge hb-ai">🤖 AI Otomatik</span>
+        <p>Müşteri bayiye gelmeden: hangi araçla ilgileniyor, bütçesi ne, finansman mı istiyor? Platform topluyor, siz hazırlıklı karşılıyorsunuz.</p>
+        <span class="hiw-badge hb-ai">⚡ Otomatik</span>
         <div class="arrow">→</div>
       </div>
       <div class="hiw-card" style="border-color:rgba(217,119,6,.3);background:linear-gradient(145deg,var(--ol),#fff)">
@@ -646,54 +1026,54 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
 <!-- BENTO FEATURES -->
 <section>
   <div class="wrap">
-    <div class="sh"><div class="eyebrow">ÖZELLIKLER</div><h2>Otomotiv firmaları için<br><span class="g-text">AI altyapısı</span></h2></div>
+    <div class="sh"><div class="eyebrow">ÖZELLIKLER</div><h2>Otomotiv firmaları için<br><span class="g-text">dijital satış altyapısı</span></h2></div>
     <div class="bento">
       <div class="bc b1" style="background:linear-gradient(145deg,var(--pl),#f0f9ff)">
-        <div class="bc-tag tc-p">GEMİNİ AI ASISTAN</div>
+        <div class="bc-tag tc-p">Gemini AI Asistan</div>
         <h3 style="font-size:1.4rem;margin-bottom:10px;letter-spacing:-.02em">Gece 2'deki müşteriyi<br>kaybetmeyin.</h3>
-        <p style="font-size:.84rem;color:var(--text2);line-height:1.65">arabam.com'da ilan koydunuz, hafta sonu mesaj geliyor — cevap veremiyorsunuz, müşteri rakibe gidiyor. VeloAI AI asistanı her soruyu anında yanıtlıyor, randevu alıyor.</p>
+        <p style="font-size:.84rem;color:var(--text2);line-height:1.65">arabam.com'da ilan koydunuz, hafta sonu mesaj geliyor — cevap veremiyorsunuz, müşteri rakibe gidiyor. VeloAI asistanı her soruyu anında yanıtlıyor, randevu alıyor.</p>
         <div class="chat-demo">
           <div class="cd-msg"><div class="cd-ico cd-user">👤</div><div class="cd-bubble cd-user" style="background:var(--p);color:#fff">Bu BMW pazar gününüz açık mı? Test sürüşü yapmak istiyorum.</div></div>
           <div class="cd-msg" style="flex-direction:row-reverse"><div class="cd-ico cd-ai">🤖</div><div class="cd-bubble cd-ai">Merhaba! Evet, Pazar 10:00-16:00 açığız. Size uygun saati hemen ayarlayabilirim. Ad ve telefon numaranızı verir misiniz?</div></div>
-          <div style="font-size:.68rem;color:var(--text3);text-align:center;margin-top:4px">Gece 02:17'de — personel yok, AI yanıtladı</div>
+          <div style="font-size:.68rem;color:var(--text3);text-align:center;margin-top:4px">Gece 02:17 — personel yok, asistan yanıtladı</div>
         </div>
       </div>
       <div class="bc b2">
         <div class="bc-tag tc-o">AKILLI SÜREÇ</div>
         <h3>Geleneksel süreci dijitalleştiriyoruz — değiştirmiyoruz.</h3>
-        <p style="margin-top:8px;font-size:.84rem;color:var(--text2);line-height:1.65">Müşteri online hazırlanır, galeriye motive gelir. Fiziksel süreç yerinde kalır, AI öncesini ve sonrasını otomatize eder.</p>
+        <p style="margin-top:8px;font-size:.84rem;color:var(--text2);line-height:1.65">Müşteri online hazırlanır, bayiye motive gelir. Fiziksel süreç yerinde kalır, AI öncesini ve sonrasını otomatize eder.</p>
         <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <div style="padding:10px;background:var(--bg);border:1px solid var(--border);border-radius:10px;font-size:.78rem">❌ <strong style="color:var(--r)">Soğuk, hazırsız müşteri</strong><br><span style="color:var(--text2);font-size:.72rem">Satış döngüsü uzar</span></div>
-          <div style="padding:10px;background:var(--gl);border:1px solid rgba(5,150,105,.2);border-radius:10px;font-size:.78rem">✅ <strong style="color:var(--g)">AI ile hazırlan, galeriye gel</strong><br><span style="color:var(--text2);font-size:.72rem">Dönüşüm oranı artar</span></div>
+          <div style="padding:10px;background:var(--gl);border:1px solid rgba(5,150,105,.2);border-radius:10px;font-size:.78rem">✅ <strong style="color:var(--g)">Online hazırlan, bayiye gel</strong><br><span style="color:var(--text2);font-size:.72rem">Dönüşüm oranı artar</span></div>
         </div>
       </div>
       <div class="bc b3">
         <div class="bc-tag tc-c">ÖN DEĞERLEME</div>
-        <h3>Müşteriyi galeriye çek</h3>
-        <p style="margin-top:8px;font-size:.83rem;color:var(--text2)">"Arabam ne eder?" sorusunu AI yanıtlıyor — bağlayıcı değil, ama galeriyi çekiyor. Fiziksel ekspertiz sonrası kesinleşir.</p>
+        <h3>Müşteriyi bayiye çek</h3>
+        <p style="margin-top:8px;font-size:.83rem;color:var(--text2)">"Arabam ne eder?" sorusunu AI yanıtlıyor — bağlayıcı değil, ama müşteriyi çekiyor. Fiziksel ekspertiz sonrası kesinleşir.</p>
         <div style="font-size:2rem;margin-top:14px">📊</div>
       </div>
       <div class="bc b4">
         <div class="bc-tag tc-g">RANDEVU</div>
         <h3>Otomatik takvim</h3>
-        <p style="margin-top:8px;font-size:.83rem;color:var(--text2)">AI randevu alıyor, SMS gönderiyor, hatırlatıyor. Personel zamanı sadece müşteriyle geç.</p>
+        <p style="margin-top:8px;font-size:.83rem;color:var(--text2)">Sistem randevu alıyor, SMS gönderiyor, hatırlatıyor. Personel zamanı sadece müşteriyle geç.</p>
         <div style="font-size:2rem;margin-top:14px">📅</div>
       </div>
       <div class="bc b5">
         <div class="bc-tag tc-p">KREDİ</div>
-        <h3>47 Banka</h3>
-        <p style="margin-top:8px;font-size:.83rem;color:var(--text2)">AI kredi hesabı yapıyor, banka karşılaştırıyor. Müşteri galeriye geldiğinde finansman kararı çoktan verilmiş.</p>
+        <h3>Çoklu Banka Simülasyonu</h3>
+        <p style="margin-top:8px;font-size:.83rem;color:var(--text2)">Platform kredi simülasyonu yapıp banka seçeneklerini karşılaştırıyor. Müşteri bayiye geldiğinde finansman kararı çoktan verilmiş.</p>
         <div style="font-size:2rem;margin-top:14px">💳</div>
       </div>
       <div class="bc b6" style="background:linear-gradient(135deg,var(--p) 0%,var(--c) 100%)">
         <div style="display:inline-block;padding:3px 9px;border-radius:100px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px">KİME UYGUN</div>
-        <h3 style="font-size:1.2rem;color:#fff;font-weight:800;margin-bottom:8px">Barem Cars gibi güçlü galeriler için yapıldı.</h3>
-        <p style="color:rgba(255,255,255,.8);font-size:.84rem;line-height:1.65">Büyük stok × çok müşteri sorusu = personel yetersizliği. AI bu açığı kapatıyor. Satış ekibiniz satışa odaklanıyor.</p>
+        <h3 style="font-size:1.2rem;color:#fff;font-weight:800;margin-bottom:8px">Barem Cars gibi büyük işletmeler için yapıldı.</h3>
+        <p style="color:rgba(255,255,255,.8);font-size:.84rem;line-height:1.65">Büyük stok × çok müşteri sorusu = personel yetersizliği. Platform bu açığı kapatıyor. Satış ekibiniz satışa odaklanıyor.</p>
       </div>
       <div class="bc b7">
         <div class="bc-tag tc-o">OFFER WATCH</div>
         <h3>Fiyat Takip</h3>
-        <p style="margin-top:8px;font-size:.83rem;color:var(--text2)">Müşteri arabasının aylık değer değişimini takip ediyor. "Satmak için doğru an" bildirimi → galeriye geliyor.</p>
+        <p style="margin-top:8px;font-size:.83rem;color:var(--text2)">Müşteri arabasının aylık değer değişimini takip ediyor. "Satmak için doğru an" bildirimi → satış ekibine geliyor.</p>
         <div style="display:flex;gap:7px;margin-top:12px;flex-wrap:wrap">
           <span style="padding:3px 9px;border-radius:100px;background:var(--gl);color:var(--g);font-size:.71rem;font-weight:700">↗ BMW +4.2%</span>
           <span style="padding:3px 9px;border-radius:100px;background:#fee2e2;color:var(--r);font-size:.71rem;font-weight:700">↘ Golf -1.8%</span>
@@ -711,24 +1091,24 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
     <div class="sell-split">
       <div>
         <div class="eyebrow">ARAÇ SAT & KONSİNYE</div>
-        <h2>Ön değerleme ile<br>galeriye çek</h2>
-        <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#dcfdf3;border:1.5px solid rgba(5,150,105,.25);border-radius:12px;margin-bottom:16px;font-size:.84rem;font-weight:700;color:#059669">⚡ 15 Dakikada Ödeme Garantisi</div>
-        <p style="color:var(--text2);margin:12px 0 16px;font-size:.91rem;line-height:1.75">Müşteri "arabam ne eder?" diye soruyor. AI beyan bazlı ön değerleme veriyor, müşteriyi galeriye çekiyor. Nihai fiyat fiziksel ekspertiz sonrası kesinleşir.</p>
+        <h2>Ön değerleme ile<br>bayiye çek</h2>
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#dcfdf3;border:1.5px solid rgba(5,150,105,.25);border-radius:12px;margin-bottom:16px;font-size:.84rem;font-weight:700;color:#059669">⚡ Hızlı ve Şeffaf Ödeme Süreci</div>
+        <p style="color:var(--text2);margin:12px 0 16px;font-size:.91rem;line-height:1.75">Müşteri "arabam ne eder?" diye soruyor. AI beyan bazlı ön değerleme veriyor, müşteriyi bayiye çekiyor. Nihai fiyat fiziksel ekspertiz sonrası kesinleşir.</p>
         <div class="sell-steps">
           <div class="sstep">
             <div class="sstep-num sn-ai">1</div>
             <div class="sstep-c">
               <h3>Online: Ön Değerleme</h3>
               <p>AI beyana göre fiyat aralığı veriyor. Kesin değil ama müşteriyi etkileşime sokuyor.</p>
-              <span class="sstep-label" style="background:var(--pl);color:var(--p)">🤖 AI Otomatik</span>
+              <span class="sstep-label" style="background:var(--pl);color:var(--p)">⚡ Otomatik</span>
             </div>
           </div>
           <div class="sstep">
             <div class="sstep-num sn-ai">2</div>
             <div class="sstep-c">
               <h3>Online: Randevu & Ön Hazırlık</h3>
-              <p>Müşteri randevu alıyor, AI galeriyi bilgilendiriyor. Hazırlıklı karşılama.</p>
-              <span class="sstep-label" style="background:var(--pl);color:var(--p)">🤖 AI Otomatik</span>
+              <p>Müşteri randevu alıyor, AI ekibi bilgilendiriyor. Hazırlıklı karşılama.</p>
+              <span class="sstep-label" style="background:var(--pl);color:var(--p)">⚡ Otomatik</span>
             </div>
           </div>
           <div class="sstep" style="border-color:rgba(217,119,6,.3);background:var(--ol)">
@@ -755,7 +1135,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
           <p style="font-size:.78rem;color:var(--o);padding:8px 12px;background:var(--ol);border-radius:9px;margin-bottom:16px;line-height:1.55">⚠️ Bu değerleme beyana dayalı ön göstergedir. Fiziksel ekspertiz sonrası nihai fiyat belirlenir.</p>
           <div class="fg-row">
             <div class="fg"><label>MARKA</label>
-              <select id="s-brand"><option>Seçin</option><option>BMW</option><option>Mercedes</option><option>Volkswagen</option><option>Toyota</option><option>Renault</option><option>Ford</option><option>Audi</option><option>Hyundai</option><option>Kia</option><option>Fiat</option></select></div>
+              <select id="s-brand"><option>Seçin</option><option>BMW</option><option>Mercedes-Benz</option><option>Volkswagen</option><option>Toyota</option><option>Renault</option><option>Ford</option><option>Audi</option><option>Hyundai</option><option>Kia</option><option>Fiat</option><option>Honda</option><option>SEAT</option><option>Dacia</option><option>Opel</option><option>Peugeot</option><option>Citroen</option><option>Tesla</option><option>MG</option><option>Cupra</option></select></div>
             <div class="fg"><label>MODEL</label><input type="text" id="s-model" placeholder="Golf, 3 Serisi..."></div>
           </div>
           <div class="fg-row">
@@ -847,7 +1227,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
 <!-- LOAN -->
 <section id="loan">
   <div class="wrap">
-    <div class="sh"><div class="eyebrow">KREDİ HESAPLAYICI</div><h2>Müşteri galeriye gelmeden<br>finansmanı planlasın</h2><p>AI kredi simülasyonu yapıyor. Müşteri galeriye geldiğinde bütçesini biliyor — satış çok daha kolay.</p></div>
+    <div class="sh"><div class="eyebrow">KREDİ HESAPLAYICI</div><h2>Müşteri bayiye gelmeden<br>finansmanı planlasın</h2><p>Platform kredi simülasyonu yapıyor. Müşteri bayiye geldiğinde bütçesini biliyor — satış çok daha kolay.</p></div>
     <div class="loan-grid">
       <div class="loan-panel">
         <div class="rg-wrap"><div class="rg-top"><label>Araç Fiyatı</label><span class="rv" id="lv-price">1.500.000 TL</span></div><input type="range" min="300000" max="5000000" step="50000" value="1500000" id="rg-price" oninput="calcLoan()"></div>
@@ -907,7 +1287,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
           <div class="co-lbl">YILLIK MTV TUTARI</div>
           <div class="co-num" id="mtv-result">—</div>
           <div id="mtv-rows"></div>
-          <div class="co-note">Resmi MTV tablosuna göre hesaplanmıştır. Kesin tutu için Gelir İdaresi'ne danışın.</div>
+          <div class="co-note">Resmi MTV tablosuna göre hesaplanmıştır. Kesin tutar için Gelir İdaresi'ne danışın.</div>
         </div>
       </div>
     </div>
@@ -1039,11 +1419,11 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
           </div>
           <div class="kons-step">
             <div class="kons-num">2</div>
-            <div class="kons-c"><h4>Depomuzda Sergile, AI Pazarlasın</h4><p>Aracınız 7/24 AI asistan tarafından potansiyel alıcılara tanıtılır.</p><span class="kons-badge" style="background:var(--gl);color:var(--g)">📣 AI Pazarlama</span></div>
+            <div class="kons-c"><h4>Depomuzda Sergile, Sistem Pazarlasın</h4><p>Aracınız 7/24 dijital asistan tarafından potansiyel alıcılara tanıtılır.</p><span class="kons-badge" style="background:var(--gl);color:var(--g)">📣 Otomatik Pazarlama</span></div>
           </div>
           <div class="kons-step">
             <div class="kons-num">3</div>
-            <div class="kons-c"><h4>Satış = Ödeme</h4><p>Alıcı bulununca 15 dakikada ödemenizi alırsınız.</p><span class="kons-badge" style="background:var(--ol);color:var(--o)">⚡ 15 Dakika Ödeme</span></div>
+            <div class="kons-c"><h4>Satış = Ödeme</h4><p>Alıcı bulununca mutabakat sağlandığı gün ödeme süreci başlar.</p><span class="kons-badge" style="background:var(--ol);color:var(--o)">⚡ Hızlı Ödeme</span></div>
           </div>
         </div>
       </div>
@@ -1068,7 +1448,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
 <!-- APPOINTMENT -->
 <section id="appointment">
   <div class="wrap">
-    <div class="sh"><div class="eyebrow">RANDEVU</div><h2>Galeriye Hazırlıklı Gel</h2><p>AI randevu alıyor, galeriyi bilgilendiriyor. Eve gelme ekspertiz hizmeti de mevcut.</p></div>
+    <div class="sh"><div class="eyebrow">RANDEVU</div><h2>Bayiye Hazırlıklı Gel</h2><p>AI randevu alıyor, satış ekibini bilgilendiriyor. Eve gelme ekspertiz hizmeti de mevcut.</p></div>
     <div class="appt-grid">
       <div class="appt-panel">
         <div class="fg"><label>AD SOYAD</label><input type="text" id="a-name" placeholder="Ad Soyad"></div>
@@ -1103,15 +1483,62 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
           <tr><td>Gece/hafta sonu soru</td><td class="ck hi-v">AI anında yanıtlar</td><td class="no">Cevap yok → müşteri gider</td></tr>
           <tr><td>Araç ön değerleme</td><td class="ck hi-v">AI 4s'de üretir (ön gösterge)</td><td class="no">Şubeye çağrı gerekir</td></tr>
           <tr><td>Randevu alma</td><td class="ck hi-v">AI otomatik ayarlar</td><td class="no">Manuel, yavaş</td></tr>
-          <tr><td>Kredi hesabı</td><td class="ck hi-v">AI simüle eder</td><td class="no">Galeriye gel, bekle</td></tr>
+          <tr><td>Kredi hesabı</td><td class="ck hi-v">AI simüle eder</td><td class="no">Bayiye gel, bekle</td></tr>
           <tr><td>Fiziksel inceleme / ekspertiz</td><td style="color:var(--o);font-weight:600">⚠️ Hâlâ zorunlu</td><td style="color:var(--o);font-weight:600">⚠️ Zaten zorunlu</td></tr>
           <tr><td>Satış sonrası e-sözleşme</td><td class="ck hi-v">Dijital, hızlı</td><td class="no">Kağıt, yavaş</td></tr>
-          <tr><td>Lead dönüşüm oranı</td><td class="ck hi-v">%67 artış (ort.)</td><td class="no">Standart kayıp</td></tr>
+          <tr><td>Lead dönüşüm oranı</td><td class="ck hi-v">%67* artış (pilot ort.)</td><td class="no">Standart kayıp</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
+
+<!-- IMPACT PANEL -->
+<section id="impact" style="background:#0a0a18;padding:80px 0">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:52px">
+      <div style="display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:100px;background:rgba(124,58,237,.18);border:1px solid rgba(124,58,237,.35);color:#a78bfa;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:16px">CANLI VERİ — BU AY</div>
+      <h2 style="color:#fff;font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:900;letter-spacing:-.03em;line-height:1.1">İşletme sahibi burada durur.</h2>
+      <p style="color:rgba(255,255,255,.5);margin-top:10px;font-size:.9rem">Bir bayinin VeloAI ile geçirdiği ilk 30 günün gerçek özeti.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:22px 20px">
+          <div style="font-size:2.4rem;font-weight:900;color:#fff;letter-spacing:-.04em">182</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.45);margin-top:4px;font-weight:600">Yeni müşteri etkileşimi</div>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:22px 20px">
+          <div style="font-size:2.4rem;font-weight:900;color:#a78bfa;letter-spacing:-.04em">124</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.45);margin-top:4px;font-weight:600">Dijital asistan görüşmesi</div>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:22px 20px">
+          <div style="font-size:2.4rem;font-weight:900;color:#38bdf8;letter-spacing:-.04em">61</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.45);margin-top:4px;font-weight:600">Randevu</div>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:22px 20px">
+          <div style="font-size:2.4rem;font-weight:900;color:#34d399;letter-spacing:-.04em">17</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.45);margin-top:4px;font-weight:600">Satış</div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(124,58,237,.25),rgba(8,145,178,.18));border:1.5px solid rgba(124,58,237,.35);border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:.7rem;color:rgba(255,255,255,.45);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Tahmini ek ciro</div>
+        <div style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1">₺12.450.000</div>
+        <div style="width:48px;height:3px;background:linear-gradient(90deg,#7c3aed,#0891b2);border-radius:2px;margin:16px 0"></div>
+        <p style="color:rgba(255,255,255,.55);font-size:.82rem;line-height:1.65">17 satış × ortalama ₺732.000 araç değeri. Bu rakam önceki aya kıyasla <strong style="color:#34d399">+4 ek satış</strong> anlamına geliyor.</p>
+        <div style="margin-top:20px;padding:12px 16px;background:rgba(255,255,255,.06);border-radius:10px;font-size:.75rem;color:rgba(255,255,255,.4)">124 görüşmenin %49'u mesai saatleri dışında gerçekleşti — personel olmadan karşılandı.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION LABEL: BAYİ PANELİ -->
+<div id="bayi-paneli" class="wrap">
+  <div class="sec-label" style="padding-top:60px">
+    <span class="sec-label-num" style="background:var(--cl);color:var(--c)">02</span>
+    <div class="sec-label-line"></div>
+    <span class="sec-label-title">Bayi Paneli — Operasyon Katmanı</span>
+  </div>
+</div>
 
 <!-- ROI CALCULATOR -->
 <section class="roi-section" id="roi">
@@ -1171,13 +1598,13 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
     <div class="sh">
       <div class="eyebrow">GALERİ PANELİ</div>
       <h2>Her lead'i, her randevuyu,<br><span class="g-text">gerçek zamanlı görün.</span></h2>
-      <p>VeloAI'nin galeri paneli size müşteri davranışlarını, dönüşüm oranlarını ve AI'nın katkısını canlı gösterir.</p>
+      <p>VeloAI bayi paneli size müşteri davranışlarını, dönüşüm oranlarını ve platformun katkısını canlı gösterir.</p>
     </div>
     <div class="dash-stats">
       <div class="ds"><div class="ds-num" id="ds-n1">73</div><div class="ds-lbl">Bu Ay Lead</div><span class="ds-delta ds-up">↑ %34 geçen aya göre</span></div>
       <div class="ds"><div class="ds-num" id="ds-n2">18</div><div class="ds-lbl">Randevu</div><span class="ds-delta ds-up">↑ %22 geçen aya göre</span></div>
-      <div class="ds"><div class="ds-num">5</div><div class="ds-lbl">Tamamlanan Satış</div><span class="ds-delta ds-nt">AI destekli</span></div>
-      <div class="ds"><div class="ds-num">₺847K</div><div class="ds-lbl">AI Katkılı Ciro</div><span class="ds-delta ds-up">↑ %41 büyüme</span></div>
+      <div class="ds"><div class="ds-num">5</div><div class="ds-lbl">Tamamlanan Satış</div><span class="ds-delta ds-nt">platform destekli</span></div>
+      <div class="ds"><div class="ds-num">₺847K</div><div class="ds-lbl">Platform Katkılı Ciro</div><span class="ds-delta ds-up">↑ %41 büyüme</span></div>
     </div>
     <div class="dash-body">
       <div class="lead-feed">
@@ -1205,6 +1632,231 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
     </div>
   </div>
 </section>
+<!-- SECTION LABEL: COMMAND CENTER -->
+<div id="command-center-label" class="wrap">
+  <div class="sec-label" style="padding-top:60px">
+    <span class="sec-label-num" style="background:rgba(124,58,237,.15);color:#a78bfa">03</span>
+    <div class="sec-label-line"></div>
+    <span class="sec-label-title">Command Center — Zeka Katmanı</span>
+  </div>
+</div>
+
+<!-- COMMAND CENTER -->
+<section id="command-center" style="background:linear-gradient(180deg,#080818 0%,#0c0c20 100%);padding:80px 0 100px">
+  <div class="wrap">
+
+    <!-- BAŞLIK -->
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 13px;border-radius:100px;background:rgba(124,58,237,.18);border:1px solid rgba(124,58,237,.35);color:#a78bfa;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#a78bfa;animation:blink 1.5s infinite;display:inline-block"></span>AI INTELLIGENCE — CANLI
+        </div>
+        <h2 style="color:#fff;font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:900;letter-spacing:-.03em;line-height:1.1">İşletmeyi yönetenler için<br><span style="background:linear-gradient(135deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">zeka merkezi.</span></h2>
+        <p style="color:rgba(255,255,255,.45);margin-top:10px;font-size:.9rem;max-width:440px;line-height:1.7">Bir soruyu yazın — AI, tüm veri kaynaklarını tarayarak cevabı saniyeler içinde hazırlar.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 20px;min-width:220px">
+        <div style="font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:8px">Canlı Veriler</div>
+        <div style="font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.95">
+          <div style="display:flex;justify-content:space-between"><span>Toplam Etkileşim</span><strong style="color:#a78bfa" id="cc-mini-leads">—</strong></div>
+          <div style="display:flex;justify-content:space-between"><span>Sıcak Lead</span><strong style="color:#34d399" id="cc-mini-hot">—</strong></div>
+          <div style="display:flex;justify-content:space-between"><span>Randevu</span><strong style="color:#38bdf8" id="cc-mini-appts">—</strong></div>
+          <div style="display:flex;justify-content:space-between"><span>Aktif Araç</span><strong style="color:#fbbf24" id="cc-mini-veh">—</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CANLI VERİ KAYNAKLARI -->
+    <div class="csrc-bar">
+      <span class="csrc-lbl">Canlı Kaynaklar:</span>
+      <div class="csrc-item"><span class="csrc-dot"></span>WhatsApp</div>
+      <div class="csrc-item"><span class="csrc-dot"></span>AI Chat / CRM</div>
+      <div class="csrc-item"><span class="csrc-dot"></span>Araç Stoku</div>
+      <div class="csrc-item"><span class="csrc-dot"></span>Randevular</div>
+      <div class="csrc-item"><span class="csrc-dot"></span>Satış Temsilcileri</div>
+      <span style="margin-left:auto;font-size:.62rem;color:rgba(255,255,255,.22)">Son güncelleme: <span id="csrc-update">yükleniyor</span></span>
+    </div>
+
+    <div class="cc-grid">
+
+      <!-- SOL KOLON -->
+      <div>
+
+        <!-- KAYIP PARA PANELİ -->
+        <div class="cc-panel kp-panel" style="margin-bottom:16px">
+          <div class="cc-panel-h" style="color:#f87171">💸 Kaybedilen Potansiyel — Bu Hafta</div>
+          <div class="kp-row">
+            <div class="kp-item">
+              <div class="kp-num" id="kp-unanswered">—</div>
+              <div class="kp-label">Geri aranmayan müşteri</div>
+              <div class="kp-ciro" id="kp-unanswered-ciro">Hesaplanıyor…</div>
+            </div>
+            <div class="kp-item">
+              <div class="kp-num" id="kp-cold">—</div>
+              <div class="kp-label">Soğuyan / kayıp lead</div>
+              <div class="kp-ciro" id="kp-cold-ciro">Hesaplanıyor…</div>
+            </div>
+          </div>
+          <div class="kp-total-row">
+            <span class="kp-total-lbl">Toplam tahmini kayıp ciro</span>
+            <span class="kp-total-num" id="kp-total">—</span>
+          </div>
+          <div class="kp-note">Ort. araç değeri × müşteri sayısı × %12 kapanma oranı tahminidir. VeloAI bu parayı geri kazandırır.</div>
+        </div>
+
+        <!-- KPI — CANLI VERILERLE -->
+        <div class="cc-kpis">
+          <div class="cc-kpi">
+            <div class="cc-kpi-n" style="color:#a78bfa" id="cc-kpi-leads">—</div>
+            <div class="cc-kpi-l">Toplam Etkileşim</div>
+            <span class="cc-kpi-d cc-kpi-up" id="cc-kpi-leads-sub">yükleniyor…</span>
+          </div>
+          <div class="cc-kpi">
+            <div class="cc-kpi-n" style="color:#34d399" id="cc-kpi-appts">—</div>
+            <div class="cc-kpi-l">Toplam Randevu</div>
+            <span class="cc-kpi-d cc-kpi-up" id="cc-kpi-appts-sub">yükleniyor…</span>
+          </div>
+          <div class="cc-kpi">
+            <div class="cc-kpi-n" style="color:#fbbf24" id="cc-kpi-veh">—</div>
+            <div class="cc-kpi-l">Aktif Araç Stoku</div>
+            <span class="cc-kpi-d" id="cc-kpi-veh-sub">yükleniyor…</span>
+          </div>
+          <div class="cc-kpi">
+            <div class="cc-kpi-n" style="color:#38bdf8" id="cc-kpi-stock">—</div>
+            <div class="cc-kpi-l">Toplam Stok Değeri</div>
+            <span class="cc-kpi-d cc-kpi-up" id="cc-kpi-stock-sub">yükleniyor…</span>
+          </div>
+        </div>
+
+        <!-- RİSKLER -->
+        <div class="cc-panel" style="margin-bottom:16px">
+          <div class="cc-panel-h">⚠ Aktif Riskler</div>
+          <div class="risk-item risk-r">
+            <div class="risk-dot"></div>
+            <div>
+              <div class="risk-text">SUV stoku kritik — Tiguan, RAV4 ve Sportage için az araç kaldı</div>
+              <div class="risk-label">Stok Riski · Acil müdahale</div>
+            </div>
+          </div>
+          <div class="risk-item risk-y">
+            <div class="risk-dot"></div>
+            <div>
+              <div class="risk-text">Yanıt bekleyen müşteriler 48+ saati aştı — rakip siteler inceleniyor</div>
+              <div class="risk-label">Lead Kayıp Riski · Bugün ara</div>
+            </div>
+          </div>
+          <div class="risk-item risk-y">
+            <div class="risk-dot"></div>
+            <div>
+              <div class="risk-text">Golf ve Clio fiyatları segment ortalamasının %8 üzerinde</div>
+              <div class="risk-label">Fiyat Rekabetçiliği · Güncelleme önerildi</div>
+            </div>
+          </div>
+          <div class="risk-item risk-g">
+            <div class="risk-dot"></div>
+            <div>
+              <div class="risk-text">Cumartesi talep yoğunluğu — ek randevu slotu gerekiyor</div>
+              <div class="risk-label">Kapasite · Slot ekle</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ÇALIŞAN ANALİZİ -->
+        <div class="cc-panel">
+          <div class="cc-panel-h">👥 Satış Temsilcisi Performansı</div>
+          <table class="emp-table">
+            <thead><tr><th>Temsilci</th><th>Hedef / Gerçek</th><th>Kapanma</th><th>Hot Lead</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><div class="emp-name">Ayhan D.</div>
+                    <div class="emp-bar"><div class="emp-fill" style="width:58%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></td>
+                <td class="emp-stat">12 / 7</td><td><span style="color:#fbbf24;font-weight:700">%58</span></td><td class="emp-stat">3</td>
+              </tr>
+              <tr>
+                <td><div class="emp-name">Mehmet K.</div>
+                    <div class="emp-bar"><div class="emp-fill" style="width:91%;background:linear-gradient(90deg,#34d399,#059669)"></div></div></td>
+                <td class="emp-stat">12 / 11</td><td><span style="color:#34d399;font-weight:700">%91</span></td><td class="emp-stat">7</td>
+              </tr>
+              <tr>
+                <td><div class="emp-name">Selin A.</div>
+                    <div class="emp-bar"><div class="emp-fill" style="width:75%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></td>
+                <td class="emp-stat">12 / 9</td><td><span style="color:#a78bfa;font-weight:700">%75</span></td><td class="emp-stat">5</td>
+              </tr>
+              <tr>
+                <td><div class="emp-name">Zeynep B.</div>
+                    <div class="emp-bar"><div class="emp-fill" style="width:83%;background:linear-gradient(90deg,#38bdf8,#0891b2)"></div></div></td>
+                <td class="emp-stat">12 / 10</td><td><span style="color:#38bdf8;font-weight:700">%83</span></td><td class="emp-stat">6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- SAĞ KOLON -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+
+        <!-- AI SORGU EKRANI (PALANTIR MOMENT) -->
+        <div class="cc-panel">
+          <div class="cc-panel-h">🔍 AI Sorgu — İşletmenize Sorun</div>
+          <div class="aq-chips">
+            <div class="aq-chip aq-active" onclick="runCCQuery('Bu ay satışlar neden düştü?')">Neden satışlar düştü?</div>
+            <div class="aq-chip" onclick="runCCQuery('En iyi lead kaynağım hangisi?')">En iyi lead kaynağı?</div>
+            <div class="aq-chip" onclick="runCCQuery('Hangi araçları daha fazla stoklayalım?')">Stok önerisi?</div>
+            <div class="aq-chip" onclick="runCCQuery('Hangi temsilciye daha fazla lead göndereyim?')">Lead dağılımı?</div>
+          </div>
+          <div class="aq-input-row">
+            <input class="aq-input" id="aq-input" placeholder="İşletmenize dair herhangi bir soru yazın…" onkeydown="if(event.key==='Enter')runCCQuery()">
+            <button class="aq-btn" onclick="runCCQuery()">Sor →</button>
+          </div>
+          <div class="aq-loading" id="aq-loading">Gemini AI analiz ediyor…</div>
+          <div class="aq-response show" id="aq-response">
+            <div class="aq-res-q" id="aq-res-question">Bu ay satışlar neden düştü?</div>
+            <div class="aq-res-items" id="aq-res-content">
+              <div class="aq-res-item aq-risk">
+                <div class="aq-res-icon">📉</div>
+                <div class="aq-res-text"><h6>SUV stoğu %32 azaldı</h6><p>8 aktif talep karşılıksız kaldı — en büyük kayıp segmenti</p></div>
+              </div>
+              <div class="aq-res-item aq-warn">
+                <div class="aq-res-icon">⏱</div>
+                <div class="aq-res-text"><h6>Dönüş süresi 4 sn → ortalama 48 saat</h6><p>Gece soruları yanıtsız bırakıldı — 17 müşteri rakip siteye geçti</p></div>
+              </div>
+              <div class="aq-res-item aq-warn">
+                <div class="aq-res-icon">💰</div>
+                <div class="aq-res-text"><h6>Golf & Clio fiyatları %8 yüksek</h6><p>3 haftalık talep düşüşü — rakip 3 araç daha uygun fiyata satıldı</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI ÖNERİLER -->
+        <div class="cc-panel">
+          <div class="cc-panel-h">💡 AI Önerileri</div>
+          <div class="rec-item">
+            <div class="rec-item-top"><span class="rec-item-badge rb-p">+4 satış beklentisi</span></div>
+            <h5>Golf ve Clio fiyatını %2–3 güncelle</h5>
+            <p>3 haftalık düşen talep + rakip fiyat analizi. Rekabetçi fiyata dönüş: tahmini 4 ek satış / ay.</p>
+          </div>
+          <div class="rec-item">
+            <div class="rec-item-top"><span class="rec-item-badge rb-w">Lead kurtarma</span></div>
+            <h5>Ayhan D.'nin leadlerini Mehmet K.'ye aktar</h5>
+            <p>%58 → %91 kapanma oranı geçişi — tahmini +2 ek satış bu hafta.</p>
+          </div>
+          <div class="rec-item">
+            <div class="rec-item-top"><span class="rec-item-badge rb-a">Stok</span></div>
+            <h5>SUV stoku için 3 araç edin veya kampanya aç</h5>
+            <p>Sportage ve RAV4'e "son araçlar" badgei — talebi yönet, kayıpları önle.</p>
+          </div>
+          <div style="margin-top:12px;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:.7rem;color:rgba(255,255,255,.3)">
+            Gemini 2.5 Flash · Veriler DB'den gerçek zamanlı · <span id="cc-last-update">az önce güncellendi</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <div class="sdiv"></div>
 
 <!-- CAR MODAL -->
@@ -1265,7 +1917,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:48px 0 26px}
   <div class="ln-body">
     <div class="ln-title" id="ln-title">Yeni Lead</div>
     <div class="ln-sub" id="ln-sub">—</div>
-    <span class="ln-badge">AI yakaladı</span>
+    <span class="ln-badge">otomatik tespit</span>
   </div>
 </div>
 
@@ -1352,10 +2004,26 @@ const CARS=[
   {id:8,e:'🚗',b:'Renault',m:'Clio',y:2021,km:107639,f:'Benzin',t:'Manuel',body:'hatchback',seg:'B',size:'kompakt',p:1029000,tag:'',mo:36000,views:45,watchers:1,trend:[100,99,99,98,98,97,96,96,95,95,94,93],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321610026-1.jpg&w=500&h=350&zc=2&q=90'},
   {id:9,e:'🚗',b:'Volkswagen',m:'Polo',y:2023,km:64424,f:'Benzin',t:'Otomatik',body:'hatchback',seg:'B',size:'kompakt',p:1219000,tag:'cert',mo:43000,views:76,watchers:2,trend:[95,96,96,97,97,98,98,99,99,100,100,101],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321548205-1.jpg&w=500&h=350&zc=2&q=90'},
   {id:10,e:'🚗',b:'Opel',m:'Astra',y:2015,km:167178,f:'Dizel',t:'Manuel',body:'sedan',seg:'C',size:'orta sedan',p:869000,tag:'',mo:31000,views:33,watchers:1,trend:[100,99,98,98,97,96,95,94,93,93,92,91],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321525319-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:11,e:'🚗',b:'Toyota',m:'Corolla',y:2019,km:138500,f:'Benzin',t:'Otomatik',body:'sedan',seg:'C',size:'orta sedan',p:949000,tag:'cert',mo:33000,views:67,watchers:2,trend:[98,98,97,97,96,96,95,95,94,94,93,92],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321480211-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:12,e:'🏎',b:'BMW',m:'3 Serisi',y:2018,km:124200,f:'Dizel',t:'Otomatik',body:'sedan',seg:'D',size:'büyük sedan',p:1459000,tag:'',mo:51000,views:112,watchers:3,trend:[95,96,96,97,97,98,98,99,99,100,100,101],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321462830-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:13,e:'🏎',b:'Mercedes-Benz',m:'C 180',y:2017,km:156800,f:'Benzin',t:'Otomatik',body:'sedan',seg:'D',size:'büyük sedan',p:1299000,tag:'',mo:46000,views:89,watchers:2,trend:[97,97,96,96,95,95,94,94,93,93,92,91],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321441503-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:14,e:'🚗',b:'Volkswagen',m:'Golf',y:2020,km:98400,f:'Benzin',t:'Otomatik',body:'hatchback',seg:'C',size:'orta hatchback',p:1189000,tag:'cert',mo:42000,views:94,watchers:3,trend:[94,95,95,96,96,97,97,98,98,99,99,100],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321503774-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:15,e:'🚗',b:'Ford',m:'Focus',y:2018,km:142700,f:'Benzin',t:'Manuel',body:'hatchback',seg:'C',size:'orta hatchback',p:849000,tag:'firsat',mo:30000,views:51,watchers:1,trend:[100,99,99,98,97,96,96,95,94,93,93,92],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321516988-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:16,e:'🚗',b:'SEAT',m:'Leon',y:2019,km:119300,f:'Benzin',t:'Otomatik',body:'hatchback',seg:'C',size:'orta hatchback',p:819000,tag:'',mo:29000,views:43,watchers:1,trend:[99,98,98,97,97,96,96,95,95,94,94,93],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321533614-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:17,e:'🚙',b:'Toyota',m:'RAV4',y:2019,km:108600,f:'Benzin',t:'Otomatik',body:'suv',seg:'D-SUV',size:'büyük SUV',p:1589000,tag:'',mo:56000,views:78,watchers:2,trend:[96,96,97,97,98,98,99,99,100,100,101,101],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321561427-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:18,e:'🚙',b:'Kia',m:'Sportage',y:2020,km:84500,f:'Dizel',t:'Otomatik',body:'suv',seg:'C-SUV',size:'orta SUV',p:1349000,tag:'cert',mo:48000,views:103,watchers:3,trend:[93,94,94,95,96,97,97,98,99,100,101,102],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321574662-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:19,e:'🚙',b:'Dacia',m:'Duster',y:2022,km:67800,f:'LPG',t:'Manuel',body:'suv',seg:'B-SUV',size:'küçük SUV',p:989000,tag:'firsat',mo:35000,views:58,watchers:2,trend:[97,97,98,98,99,99,100,100,100,101,101,102],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321587349-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:20,e:'🚗',b:'Fiat',m:'Egea',y:2021,km:87300,f:'Benzin',t:'Manuel',body:'sedan',seg:'B',size:'kompakt',p:849000,tag:'',mo:30000,views:39,watchers:1,trend:[100,99,99,98,98,97,97,96,96,95,95,94],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321540891-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:21,e:'🚗',b:'Renault',m:'Megane',y:2019,km:131200,f:'Dizel',t:'Manuel',body:'hatchback',seg:'C',size:'orta hatchback',p:879000,tag:'firsat',mo:31000,views:47,watchers:1,trend:[100,99,98,98,97,96,95,95,94,93,92,91],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321557183-1.jpg&w=500&h=350&zc=2&q=90'},
+  {id:22,e:'🚗',b:'Honda',m:'Civic',y:2020,km:103700,f:'Benzin',t:'Otomatik',body:'sedan',seg:'C',size:'orta sedan',p:1059000,tag:'',mo:37000,views:71,watchers:2,trend:[96,96,97,97,97,98,98,99,99,99,100,100],img:'https://www.baremcars.com/image.php?src=https://www.baremcars.com/images/ad-galeri/ilan-1321568945-1.jpg&w=500&h=350&zc=2&q=90'},
 ];
 
 let favs=new Set(),sC='good',selSlot='09:00 – 11:00',chatOpen=false,chatReady=false;
-// Localhost → local FastAPI | Vercel → /api (serverless) | diğer → Render
+// Cloudflare Worker — Gemini proxy (ÜCRETSİZ, key Worker secret'ında, tarayıcıya İNMEZ).
+// Deploy sonrası workers.dev URL'sini buraya yapıştır, örn:
+//   const GEMINI_PROXY = 'https://veloai-gemini.xxxx.workers.dev';
+const GEMINI_PROXY = 'https://veloai-gemini.serdarbba.workers.dev';
+// Localhost → local FastAPI | Vercel → /api (serverless) | diğer → Render (yedek)
 const BACKEND_URL = (()=>{
   const h = window.location.hostname;
   if(h==='localhost'||h==='127.0.0.1') return 'http://localhost:8765';
@@ -1363,8 +2031,11 @@ const BACKEND_URL = (()=>{
   return 'https://barem-ai.onrender.com';
 })();
 
-// Vercel'de /api/gemini, lokalde /gemini endpoint'i kullan
-function geminiEndpoint(){ return BACKEND_URL ? BACKEND_URL+'/gemini' : '/api/gemini'; }
+// Worker tanımlıysa her yerde (GitHub Pages dahil) onu kullan; değilse eski mantık.
+function geminiEndpoint(){
+  if(GEMINI_PROXY) return GEMINI_PROXY;
+  return BACKEND_URL ? BACKEND_URL+'/gemini' : '/api/gemini';
+}
 let chatHistory=[];
 let timerInt=null;
 let SESSION_ID=localStorage.getItem('velo_sid')||'';
@@ -1400,15 +2071,16 @@ Müşteri "D segment" demişse sen de kullanabilirsin. Kullanmamışsa kullanma.
 
 ## ARAÇ / SEGMENT BİLGİN (içsel kullanım, müşteriye söyleme)
 SUV boyutları:
-- Küçük SUV (B-SUV): Peugeot 2008, Nissan Juke, Renault Captur, Ford Puma (4-4.3m)
-- Orta SUV (C-SUV): VW Tiguan, Hyundai Tucson, Skoda Karoq, MG HS, Cupra Ateca (4.4-4.7m)
-- Büyük SUV (D-SUV): VW Touareg, BMW X5, Tesla Model Y (Long Range), Mercedes GLE (4.7m+)
+- Küçük SUV (B-SUV): Peugeot 2008, Nissan Juke, Renault Captur, Ford Puma, Dacia Duster (4-4.3m)
+- Orta SUV (C-SUV): VW Tiguan, Hyundai Tucson, Skoda Karoq, MG HS, Cupra Ateca, Kia Sportage (4.4-4.7m)
+- Büyük SUV (D-SUV): Toyota RAV4, VW Touareg, BMW X5, Tesla Model Y (Long Range), Mercedes GLE (4.7m+)
 
 Araç boyutları:
 - Küçük / şehir: Getz, Aygo, Twingo, 500
-- Kompakt: Polo, Clio, Corsa, Yaris
-- Orta: Golf, Astra, Megane, Focus, Citroen C4
-- Büyük sedan: Passat, Mondeo, BMW 3 Serisi, Mercedes C
+- Kompakt: Polo, Clio, Corsa, Yaris, Fiat Egea
+- Orta hatchback: Golf, Astra, Megane, Focus, Citroen C4, SEAT Leon
+- Orta sedan: Toyota Corolla, Honda Civic
+- Büyük sedan: Passat, Mondeo, BMW 3 Serisi, Mercedes C Serisi
 
 Yakıt rehberi:
 - Elektrikli: Tesla Model Y, Citroen ë-C4 — şarj altyapısı olan için ideal, yakıt masrafı çok düşük
@@ -1434,7 +2106,7 @@ Randevuya yönlendir: "Gelin araçları birlikte görelim, ekspertiz ücretsiz"
 ## BAREM CARS
 4 şube: İstanbul Küçükçekmece · Yenibosna · Ankara · Hatay İskenderun
 WhatsApp: 0543 250 50 32 | Hafta içi 09:00-18:00
-15 dakikada ödeme garantisi | Eve gelme ekspertizi
+Hızlı ödeme süreci | Eve gelme ekspertizi
 
 ## FORMAT KURALLARI
 - Türkçe, samimi, kısa tut
@@ -1541,7 +2213,7 @@ function procDemo(txt){
   const lo=txt.toLowerCase();
   if(/(sat|değer|fiyat|teklif|ne kadar|arabam)/i.test(lo)){addAI('Araç satmak istiyorsunuz! 🎯\n\n**Süreç şöyle işliyor:**\n1. Size beyan bazlı ön değerleme veriyorum\n2. Randevu alıyoruz\n3. Uzman geliyor, ekspertiz yapıyor\n4. Gerçek fiyat belirleniyor\n\nHandbook için: Marka, model, yıl, kilometre?')}
   else if(/(suv|arazi)/i.test(lo)){addAI('Stoğumuzdaki SUVler:');addCarCards(CARS.filter(c=>c.body==='suv').map(c=>({name:c.y+' '+c.b+' '+c.m,km:c.km,fuel:c.f,price:c.p})));}
-  else if(/(kredi|taksit)/i.test(lo)){addAI('Kredi hesabı — galeriye gelmeden planlamanızı yapın:');const d=document.createElement('div');d.className='m m-ai';d.innerHTML='<div class="tc-block"><div class="tc-h">💳 Örnek</div><div class="tc-b"><div class="tc-r"><span class="tk">Araç</span><span class="tv">1.500.000 TL</span></div><div class="tc-r"><span class="tk">Peşinat</span><span class="tv">300.000 TL</span></div><div class="tc-r"><span class="tk">Aylık</span><span class="tv">~68.500 TL</span></div></div></div>';msgs().appendChild(d);scroll();}
+  else if(/(kredi|taksit)/i.test(lo)){addAI('Kredi hesabı — bayiye gelmeden planlamanızı yapın:');const d=document.createElement('div');d.className='m m-ai';d.innerHTML='<div class="tc-block"><div class="tc-h">💳 Örnek</div><div class="tc-b"><div class="tc-r"><span class="tk">Araç</span><span class="tv">1.500.000 TL</span></div><div class="tc-r"><span class="tk">Peşinat</span><span class="tv">300.000 TL</span></div><div class="tc-r"><span class="tk">Aylık</span><span class="tv">~68.500 TL</span></div></div></div>';msgs().appendChild(d);scroll();}
   else if(/(randevu|gel|test|sürüş)/i.test(lo)){addAI('Randevu alalım! 📅\n\nGaleri ziyareti veya eve gelme ekspertizi. Ad ve telefon?')}
   else if(/(whatsapp|insan|uzman)/i.test(lo)){addAI('Uzman ekibimize bağlıyorum!');const d=document.createElement('div');d.className='m m-ai';d.innerHTML='<a href="https://wa.me/905552505051" target="_blank" class="wa-btn"><span>💬</span><span>WhatsApp\'ta Konuş</span></a>';msgs().appendChild(d);scroll();}
   else{addAI('Merhaba! 😊 Size nasıl yardımcı olabilirim?\n\n• 🚗 Araç satmak — ön değerleme + ekspertiz randevusu\n• 🔍 Araç almak — sertifikalı stok\n• 💳 Kredi hesabı\n• 📅 Randevu\n• 👨‍💼 Uzman ile konuş\n\n*(Gerçek AI için sayfadaki API anahtarı kutusuna anahtarınızı girin)*')}
@@ -1971,10 +2643,124 @@ const dashObserver=new IntersectionObserver(entries=>{
 },{threshold:0.4});
 const dashEl=document.getElementById('dashboard');if(dashEl)dashObserver.observe(dashEl);
 
+// ── MOD SWITCHER ──────────────────────────────────────────────────────────────
+function setMode(mode){
+  ['dealer','enterprise'].forEach(m=>{
+    const btn=document.getElementById('mode-'+m);
+    const content=document.getElementById('hero-'+m);
+    if(btn)btn.classList.toggle('mode-active',m===mode);
+    if(content)content.style.display=m===mode?'':'none';
+  });
+  const kicker=document.getElementById('hero-kicker-text');
+  if(kicker){
+    kicker.innerHTML=mode==='dealer'
+      ?'Otomotiv Bayileri için AI Satış Asistanı &nbsp;·&nbsp; <strong>Barem Cars için hazırlandı</strong>'
+      :'Otomotiv İşletmelerinin Operasyon Zekası &nbsp;·&nbsp; <strong>Enterprise Demo</strong>';
+  }
+  try{localStorage.setItem('veloai_mode',mode);}catch(e){}
+}
+
+// ── COMMAND CENTER: CANLI VERİLER ─────────────────────────────────────────────
+async function loadCCStats(){
+  try{
+    const r=await fetch(BACKEND_URL+'/command-center/stats');
+    if(!r.ok)return;
+    const d=await r.json();
+    const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+    set('cc-mini-leads',d.sessions);
+    set('cc-mini-hot',d.hot_leads);
+    set('cc-mini-appts',d.appointments);
+    set('cc-mini-veh',d.vehicles_active);
+    set('cc-kpi-leads',d.sessions);
+    set('cc-kpi-appts',d.appointments);
+    set('cc-kpi-veh',d.vehicles_active);
+    const mv=d.total_stock_value||0;
+    const avgPrice=d.vehicles_active>0?mv/d.vehicles_active:730000;
+    set('cc-kpi-stock',mv>=1000000?'₺'+(mv/1000000).toFixed(1)+'M':'₺'+(mv/1000).toFixed(0)+'K');
+    set('cc-kpi-leads-sub',(d.hot_leads||0)+' sıcak lead');
+    set('cc-kpi-appts-sub',(d.appointments_done||0)+' tamamlandı');
+    set('cc-kpi-veh-sub',(d.total_messages||0)+' konuşma mesajı');
+    set('cc-kpi-stock-sub',(d.vehicles_active||0)+' araç aktif');
+    set('csrc-update','az önce');
+    set('cc-last-update','az önce güncellendi');
+    // ── KAYIP PARA HESABI ────────────────────────────────────────────────────
+    const fmt=v=>v>=1000000?'₺'+(v/1000000).toFixed(1)+'M':'₺'+(v/1000).toFixed(0)+'K';
+    const coldLeads=Math.max(0,(d.sessions||0)-(d.hot_leads||0)-(d.appointments||0));
+    const unanswered=Math.max(0,(d.sessions||0)-(d.appointments||0));
+    const kayipLead=coldLeads*avgPrice*0.12;
+    const kayipUnanswered=unanswered*avgPrice*0.10;
+    const kayipTotal=kayipLead+kayipUnanswered;
+    set('kp-unanswered',unanswered);
+    set('kp-unanswered-ciro','Tahmini: '+fmt(kayipUnanswered));
+    set('kp-cold',coldLeads);
+    set('kp-cold-ciro','Tahmini: '+fmt(kayipLead));
+    set('kp-total',fmt(kayipTotal));
+  }catch(e){}
+}
+
+async function runCCQuery(q){
+  const inp=document.getElementById('aq-input');
+  const respEl=document.getElementById('aq-response');
+  const loadEl=document.getElementById('aq-loading');
+  const question=q||(inp&&inp.value.trim())||'';
+  if(!question)return;
+  if(inp)inp.value=question;
+  document.querySelectorAll('.aq-chip').forEach(c=>c.classList.toggle('aq-active',c.textContent.trim()===question||c.onclick&&c.onclick.toString().includes(question.slice(0,12))));
+  respEl&&respEl.classList.remove('show');
+  loadEl&&loadEl.classList.add('show');
+  try{
+    const r=await fetch(BACKEND_URL+'/command-center/query',{
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question})
+    });
+    if(!r.ok)throw new Error();
+    const d=await r.json();
+    loadEl&&loadEl.classList.remove('show');
+    document.getElementById('aq-res-question').textContent=question;
+    document.getElementById('aq-res-content').innerHTML=_renderCCAnswer(d.answer);
+    respEl&&respEl.classList.add('show');
+  }catch(e){
+    loadEl&&loadEl.classList.remove('show');
+    _demoCCResponse(question);
+  }
+}
+
+function _renderCCAnswer(text){
+  return (text||'').split('\n').filter(l=>l.trim()).map(l=>{
+    const c=l.replace(/^[-•*]\s*/,'').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+    return `<div class="aq-res-item"><div class="aq-res-text"><p>${c}</p></div></div>`;
+  }).join('')||`<div class="aq-res-item"><div class="aq-res-text"><p>${text}</p></div></div>`;
+}
+
+function _demoCCResponse(q){
+  const respEl=document.getElementById('aq-response');
+  if(!respEl)return;
+  document.getElementById('aq-res-question').textContent=q;
+  let items;
+  if(/satu[sş]|d[uü][sş]t[uü]|azald|d[uü][sş][uü][şs]/i.test(q)){
+    items=`<div class="aq-res-item aq-risk"><div class="aq-res-icon">📉</div><div class="aq-res-text"><h6>SUV stoğu %32 azaldı</h6><p>8 aktif talep karşılıksız kaldı — en büyük kayıp segmenti</p></div></div>
+<div class="aq-res-item aq-warn"><div class="aq-res-icon">⏱</div><div class="aq-res-text"><h6>Dönüş süresi 4 sn → ortalama 48 saat</h6><p>Gece soruları yanıtsız bırakıldı — 17 müşteri rakip siteye geçti</p></div></div>
+<div class="aq-res-item aq-warn"><div class="aq-res-icon">💰</div><div class="aq-res-text"><h6>Golf & Clio fiyatları %8 yüksek</h6><p>3 haftalık talep düşüşü — rakip 3 araç daha uygun fiyata satıldı</p></div></div>`;
+  }else if(/lead|kayna[kğg]/i.test(q)){
+    items=`<div class="aq-res-item aq-ok"><div class="aq-res-icon">💬</div><div class="aq-res-text"><h6>WhatsApp en verimli kaynak</h6><p>Lead'lerin %58'i WhatsApp'tan, kapanma oranı %24</p></div></div>
+<div class="aq-res-item aq-warn"><div class="aq-res-icon">🌐</div><div class="aq-res-text"><h6>Web formu dönüşümü düşük</h6><p>%8 kapanma — AI chat'e yönlendirme artırılmalı</p></div></div>`;
+  }else if(/stok|hangi araç|stoklaya/i.test(q)){
+    items=`<div class="aq-res-item aq-risk"><div class="aq-res-icon">🚗</div><div class="aq-res-text"><h6>SUV talebi en yüksek — %34 oranında</h6><p>Kia Sportage, Toyota RAV4 ve Tiguan öncelikli stoklama önerilir</p></div></div>
+<div class="aq-res-item aq-ok"><div class="aq-res-icon">📈</div><div class="aq-res-text"><h6>Ekonomik sedan stoku stabil</h6><p>Clio ve Fabia yeterli — fiyat güncellemesi yeterli</p></div></div>`;
+  }else if(/temsilci|hangi temsilci|lead da[gğ]/i.test(q)){
+    items=`<div class="aq-res-item aq-ok"><div class="aq-res-icon">👤</div><div class="aq-res-text"><h6>Mehmet K. — %91 kapanma oranı</h6><p>Sıcak ve acil lead'leri Mehmet'e yönlendir — maksimum dönüşüm</p></div></div>
+<div class="aq-res-item aq-warn"><div class="aq-res-icon">📚</div><div class="aq-res-text"><h6>Ayhan D. — Koçluk önerisi</h6><p>%58 kapanma — kredi süreci eğitimi ile %70+ hedeflenir</p></div></div>`;
+  }else{
+    items=`<div class="aq-res-item aq-ok"><div class="aq-res-icon">🤖</div><div class="aq-res-text"><h6>Gerçek zamanlı analiz hazır</h6><p>Sistemi deploy ettikten sonra canlı verilerle yanıtlanır</p></div></div>`;
+  }
+  document.getElementById('aq-res-content').innerHTML=items;
+  respEl.classList.add('show');
+}
+
 document.addEventListener('DOMContentLoaded',()=>{
   const d=document.getElementById('a-date');if(d){const t=new Date();t.setDate(t.getDate()+1);d.min=t.toISOString().split('T')[0];d.value=d.min}
   renderCars(CARS);calcLoan();updateBadge();calcROI();updateLiveVisitors();calcMTV();calcOTV();calcDK();calcKasko();
-  let i=0;setInterval(()=>{i=(i+1)%3;const el=document.querySelector('.fc-stat-n');if(el)el.textContent=['%67','3.2×','7/24'][i]},2500);
+  loadCCStats();
+  let i=0;setInterval(()=>{i=(i+1)%3;const el=document.querySelector('.fc-stat-n');if(el)el.textContent=['%67*','3.2×*','7/24'][i]},2500);
   // Nav'a ROI linki ekle
   const navLinks=document.querySelector('.nav-links');
   if(navLinks){const a=document.createElement('a');a.href='#roi';a.textContent='ROI Hesapla';navLinks.appendChild(a)}

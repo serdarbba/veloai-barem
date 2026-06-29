@@ -1,0 +1,6 @@
+name = "veloai-gemini"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Key BURAYA YAZILMAZ — secret olarak eklenir:
+#   wrangler secret put GEMINI_API_KEY
